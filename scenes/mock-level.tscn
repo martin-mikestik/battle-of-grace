@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://26yiiarp5j50"]
+
+[ext_resource type="PackedScene" uid="uid://b7ld6s88ydubw" path="res://scenes/blue-godot.tscn" id="1_4j81o"]
+
+[node name="Level" type="Node2D" unique_id=1381351498]
+
+[node name="Background" type="Node2D" parent="." unique_id=1023409328]
+
+[node name="BlueGodot" parent="Background" unique_id=1324135443 instance=ExtResource("1_4j81o")]
+position = Vector2(227, 225)
+
+[node name="BlueGodot2" parent="Background" unique_id=152094998 instance=ExtResource("1_4j81o")]
+position = Vector2(447, 446)
+
+[node name="BlueGodot3" parent="Background" unique_id=900176483 instance=ExtResource("1_4j81o")]
+position = Vector2(797, 184)
+
+[node name="BlueGodot4" parent="Background" unique_id=1086576647 instance=ExtResource("1_4j81o")]
+position = Vector2(721, 475)
+
+[node name="BlueGodot5" parent="Background" unique_id=2011961595 instance=ExtResource("1_4j81o")]
+position = Vector2(578, 251)
+scale = Vector2(0.59471583, 0.59471583)
+
+[node name="BlueGodot9" parent="Background" unique_id=1459707375 instance=ExtResource("1_4j81o")]
+position = Vector2(362, 75.999985)
+scale = Vector2(0.59471583, 0.59471583)
+
+[node name="BlueGodot6" parent="Background" unique_id=780139823 instance=ExtResource("1_4j81o")]
+position = Vector2(104, 493)
+scale = Vector2(0.71860373, 0.71860373)
+
+[node name="BlueGodot7" parent="Background" unique_id=2055347131 instance=ExtResource("1_4j81o")]
+position = Vector2(1003.99994, 535)
+scale = Vector2(1.1225532, 1.1225532)
+
+[node name="BlueGodot8" parent="Background" unique_id=1860726724 instance=ExtResource("1_4j81o")]
+position = Vector2(1017, 330)
+scale = Vector2(0.66842157, 0.66842157)

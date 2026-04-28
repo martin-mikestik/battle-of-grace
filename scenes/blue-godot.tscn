@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b7ld6s88ydubw"]
+
+[ext_resource type="Texture2D" uid="uid://dge6uw77bkr6r" path="res://icon.svg" id="1_nxnqr"]
+
+[node name="BlueGodot" type="Node2D" unique_id=1324135443]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=786862789]
+modulate = Color(0.43266684, 0.26, 1, 1)
+texture = ExtResource("1_nxnqr")
