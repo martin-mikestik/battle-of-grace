@@ -2,8 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://dge6uw77bkr6r" path="res://assets/icon.svg" id="1_nxnqr"]
 
-[node name="BlueGodot" type="Node2D" unique_id=1324135443]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxnqr"]
+size = Vector2(127, 128)
+
+[node name="BlueGodot" type="StaticBody2D" unique_id=570256115]
+collision_layer = 3
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=786862789]
 modulate = Color(0.43266684, 0.26, 1, 1)
 texture = ExtResource("1_nxnqr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=601882596]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_nxnqr")

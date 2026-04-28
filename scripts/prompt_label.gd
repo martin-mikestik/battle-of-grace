@@ -4,6 +4,8 @@ extends RichTextLabel
 @export var unfinished_color: Color = Color(0.0, 0.0, 0.0, 0.616)
 @export var completed_color: Color = Color(1.0, 0.357, 0.29, 1.0)
 
+signal prompt_finished
+
 var next_necessary_letter_index: int = 0
 
 func _ready():
@@ -17,6 +19,7 @@ func _process(delta):
 	
 func check_text():
 	if next_necessary_letter_index == len(expected_text):
+		prompt_finished.emit()
 		queue_free()
 
 func get_needed_letter() -> String:
@@ -35,16 +38,14 @@ func update_label_color() -> void:
 	var unfinished_text: String = ""
 	var remaining_text_length: int = len(expected_text) - next_necessary_letter_index
 	
-	print("expected text: " + expected_text)
 	completed_text = expected_text.substr(0, next_necessary_letter_index)
 	var completed_text_1 = RichLabelHelper.add_color_tag(completed_text, completed_color.to_html())
-	print("expected text: " + expected_text)
+
 	unfinished_text = expected_text.substr(next_necessary_letter_index, remaining_text_length)
 	var unfinished_text_1 = RichLabelHelper.add_color_tag(unfinished_text, unfinished_color.to_html())
 	
-	print("expected text: " + expected_text)
-	print(completed_text_1)
-	print(unfinished_text_1)
 	
 	var result = completed_text_1 + unfinished_text_1
+	result = RichLabelHelper.add_shake(result, 20.0, 5)
+	#print(result)
 	text = result
