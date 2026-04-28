@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dof7wconlacdj"]
+
+[node name="PromptRichLabel" type="RichTextLabel" unique_id=2087789027]
+offset_left = 8.0
+offset_right = 286.0
+offset_bottom = 61.0
+bbcode_enabled = true
+text = "[color=red][wave amp=30 freq=5]Hello[/wave][/color] [color=blue][shake rate=15 level=10]World[/shake][/color]"
+scroll_active = false

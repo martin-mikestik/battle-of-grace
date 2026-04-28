@@ -8,8 +8,8 @@ const TEXT_INPUT = preload("uid://ukdg61uwdpi2")
 var possible_words: Array[String] = ["hello", "word", "enemy", "delta", "elegy"]
 
 
-func generate_prompt() -> Label:
-	var instance: Label = TEXT_INPUT.instantiate()
+func generate_prompt() -> RichTextLabel:
+	var instance: RichTextLabel = TEXT_INPUT.instantiate()
 	instance.expected_text = generate_string()
 	instance.text = instance.expected_text
 	return instance
@@ -19,7 +19,7 @@ func generate_string() -> String:
 	var expected_text: String = ""
 	
 	for i in range(num_words):
-		var i_selected_word: int = randi_range(num_words_range.x, num_words_range.y)
+		var i_selected_word: int = randi_range(0, len(possible_words) - 1)
 		expected_text += possible_words[i_selected_word]
 		expected_text += " "
 

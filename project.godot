@@ -13,12 +13,13 @@ config_version=5
 config/name="Agilitymaxxers"
 run/main_scene="uid://26yiiarp5j50"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
 
 [autoload]
 
 TextPromptGenerator="*uid://bnabg5717q75s"
 InputHandler="*uid://brnycr6gat0ai"
+RichLabelHelper="*uid://bfrbh876uwa06"
 
 [input]
 

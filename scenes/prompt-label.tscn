@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ukdg61uwdpi2"]
+
+[ext_resource type="FontFile" uid="uid://c3limxn176pds" path="res://assets/fonts/JetBrainsMonoNL-Regular.ttf" id="1_qlc7c"]
+[ext_resource type="Script" uid="uid://d3sn8i1x3nytf" path="res://scripts/prompt_label.gd" id="2_l5qe0"]
+
+[sub_resource type="Theme" id="Theme_kcjo6"]
+Label/constants/outline_size = 7
+Label/font_sizes/font_size = 25
+Label/fonts/font = ExtResource("1_qlc7c")
+RichTextLabel/font_sizes/normal_font_size = 29
+RichTextLabel/fonts/normal_font = ExtResource("1_qlc7c")
+
+[node name="PromptLabel" type="RichTextLabel" unique_id=1076373495]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -47.0
+offset_right = 146.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_kcjo6")
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_l5qe0")

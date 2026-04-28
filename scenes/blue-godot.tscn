@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7ld6s88ydubw"]
 
-[ext_resource type="Texture2D" uid="uid://dge6uw77bkr6r" path="res://icon.svg" id="1_nxnqr"]
+[ext_resource type="Texture2D" uid="uid://dge6uw77bkr6r" path="res://assets/icon.svg" id="1_nxnqr"]
 
 [node name="BlueGodot" type="Node2D" unique_id=1324135443]
 
