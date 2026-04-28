@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://26yiiarp5j50"]
 
 [ext_resource type="PackedScene" uid="uid://b7ld6s88ydubw" path="res://scenes/blue-godot.tscn" id="1_4j81o"]
+[ext_resource type="PackedScene" uid="uid://w60lbvelgtkq" path="res://scenes/player.tscn" id="2_xbqd1"]
 
 [node name="Level" type="Node2D" unique_id=1381351498]
 
@@ -37,3 +38,6 @@ scale = Vector2(1.1225532, 1.1225532)
 [node name="BlueGodot8" parent="Background" unique_id=1860726724 instance=ExtResource("1_4j81o")]
 position = Vector2(1017, 330)
 scale = Vector2(0.66842157, 0.66842157)
+
+[node name="Player" parent="." unique_id=145763616 instance=ExtResource("2_xbqd1")]
+position = Vector2(377, 357)
