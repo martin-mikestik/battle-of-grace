@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ukdg61uwdpi2"]
+
+[ext_resource type="Script" uid="uid://d3sn8i1x3nytf" path="res://scripts/text-input.gd" id="1_egalr"]
+
+[node name="TextInput" type="TextEdit" unique_id=1361961069]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -47.0
+offset_right = 146.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "oopsie!"
+script = ExtResource("1_egalr")

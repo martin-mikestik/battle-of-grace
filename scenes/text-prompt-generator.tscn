@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bav2o0hb53mmt"]
+
+[ext_resource type="Script" uid="uid://bnabg5717q75s" path="res://scripts/text_prompt_generator.gd" id="1_ww8d2"]
+
+[node name="TextPromptGenerator" type="Node" unique_id=1082744145]
+script = ExtResource("1_ww8d2")
