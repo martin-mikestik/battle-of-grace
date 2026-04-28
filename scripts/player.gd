@@ -5,9 +5,8 @@ extends CharacterBody2D
 
 func _process(delta):
 	if Input.is_action_just_pressed("LaunchPromptGeneration"):
-		var instance: TextEdit = TextPromptGenerator.generate_prompt()
+		var instance: Label = TextPromptGenerator.generate_prompt()
 		add_child(instance)
-		instance.grab_focus()
 
 func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")

@@ -8,10 +8,10 @@ const TEXT_INPUT = preload("uid://ukdg61uwdpi2")
 var possible_words: Array[String] = ["hello", "word", "enemy", "delta", "elegy"]
 
 
-func generate_prompt() -> TextEdit:
-	var instance: TextEdit = TEXT_INPUT.instantiate()
+func generate_prompt() -> Label:
+	var instance: Label = TEXT_INPUT.instantiate()
 	instance.expected_text = generate_string()
-	instance.placeholder_text = instance.expected_text
+	instance.text = instance.expected_text
 	return instance
 
 func generate_string() -> String:
@@ -26,5 +26,5 @@ func generate_string() -> String:
 	var expected_text_length: int = len(expected_text)
 	expected_text = expected_text.erase(expected_text_length - 1)
 	
-	print(expected_text)
+	#print(expected_text)
 	return expected_text
