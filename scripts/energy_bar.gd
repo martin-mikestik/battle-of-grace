@@ -20,7 +20,9 @@ func handle_key_presses(key_press: String):
 	if key_press == "0":
 		add_energy_slots(3)
 	if key_press == "2":
-		fill_energy_slots()
+		fill_energy_slots(1)
+	if key_press == "3":
+		remove_energy_slots(1)
 
 func add_energy_slots(num: int):
 	for i in range(num):
@@ -30,26 +32,31 @@ func add_energy_slots(num: int):
 		num_slots += 1
 		recalculate_filled_slots()
 
-func fill_energy_slots(): # num: int
-	if filled_slots < num_slots:
-		#var slot_to_fill_index: int = num_slots - filled_slots - 1
-		var slot_to_fill_index: int = filled_slots
-		#list_energy_slots[slot_to_fill_index].value = list_energy_slots[slot_to_fill_index].max_value
-		filled_slots += 1
-		print("here")
-		recalculate_filled_slots()
+func remove_energy_slots(num: int):
+	for i in range(num):
+		if num_slots != 0:
+			list_energy_slots[0].queue_free()
+			list_energy_slots.remove_at(0)
+			if filled_slots == num_slots:
+				filled_slots -= 1
+			num_slots -= 1
+			recalculate_filled_slots()
+
+
+func fill_energy_slots(num: int):
+	for i in range(num):
+		if filled_slots < num_slots:
+			var slot_to_fill_index: int = filled_slots
+			filled_slots += 1
+			recalculate_filled_slots()
 		
 
 func recalculate_filled_slots():
-	print("filled slots: " + str(filled_slots))
-	print("num slots: " + str(num_slots))
 	for i in range(0, num_slots - filled_slots):
 		list_energy_slots[i].value = list_energy_slots[i].min_value
-		print("adding zero energy to: " + list_energy_slots[i].name + " slot")
-		#print("setting: " + str(i) + " to max")
 	for i in range(num_slots - filled_slots, num_slots):
 		list_energy_slots[i].value = list_energy_slots[i].max_value
-		print("adding max energy to: " + list_energy_slots[i].name + " slot")
+
 
 # Interface:
 # - increase/descrease maximum number of slots by n
