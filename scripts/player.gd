@@ -3,6 +3,8 @@ extends CharacterBody2D
 @export var speed: float = 300.0
 @onready var prompt_labels: Node2D = $PromptLabels
 
+var has_prompt: bool = false
+
 const EXPLOSION = preload("uid://b5kv1hvj1080o")
 
 
@@ -10,10 +12,15 @@ const EXPLOSION = preload("uid://b5kv1hvj1080o")
 @export var duration: float = 0.8
 
 func _process(delta):
-	if Input.is_action_just_pressed("LaunchPromptGeneration"):
-		var instance: RichTextLabel = TextPromptGenerator.generate_prompt()
-		prompt_labels.add_child(instance)
-		instance.prompt_finished.connect(_on_prompt_finished)
+	handle_input()
+
+
+func handle_input():
+	if Input.is_action_just_pressed("LaunchPromptGeneration") and not has_prompt:
+		has_prompt = true
+		var prompt_instance: RichTextLabel = TextPromptGenerator.generate_prompt()
+		prompt_labels.add_child(prompt_instance)
+		prompt_instance.prompt_finished.connect(_on_prompt_finished)
 
 func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")
@@ -27,7 +34,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_prompt_finished():
-	print("prompt finished")
+	has_prompt = false
 	
 	juicy_rotate(360)
 	

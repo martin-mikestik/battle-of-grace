@@ -1,15 +1,23 @@
 [gd_scene format=3 uid="uid://yfgtjsvn61d0"]
 
-[ext_resource type="Script" uid="uid://6t1mxl3cbvob" path="res://scripts/input_test_scripts/input_0.gd" id="1_udcqu"]
+[sub_resource type="GDScript" id="GDScript_jim3p"]
+script/source = "extends Node
+
+func _input(event: InputEvent):
+	print(event)
+	if event is InputEventKey and event.pressed and char(event.unicode) == \"s\":
+		print(name + \": \" + str(event))
+		get_viewport().set_input_as_handled()
+"
 
 [node name="Node0" type="Node2D" unique_id=1560747948]
-script = ExtResource("1_udcqu")
+script = SubResource("GDScript_jim3p")
 
 [node name="Node1" type="Node" parent="." unique_id=1036846761]
-script = ExtResource("1_udcqu")
+script = SubResource("GDScript_jim3p")
 
 [node name="Node2" type="Node" parent="." unique_id=782996950]
-script = ExtResource("1_udcqu")
+script = SubResource("GDScript_jim3p")
 
 [node name="Node3" type="Node" parent="." unique_id=535618145]
-script = ExtResource("1_udcqu")
+script = SubResource("GDScript_jim3p")
