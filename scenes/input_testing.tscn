@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://yfgtjsvn61d0"]
+
+[ext_resource type="Script" uid="uid://6t1mxl3cbvob" path="res://scripts/input_test_scripts/input_0.gd" id="1_udcqu"]
+
+[node name="Node0" type="Node2D" unique_id=1560747948]
+script = ExtResource("1_udcqu")
+
+[node name="Node1" type="Node" parent="." unique_id=1036846761]
+script = ExtResource("1_udcqu")
+
+[node name="Node2" type="Node" parent="." unique_id=782996950]
+script = ExtResource("1_udcqu")
+
+[node name="Node3" type="Node" parent="." unique_id=535618145]
+script = ExtResource("1_udcqu")
