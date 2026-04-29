@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b7ld6s88ydubw" path="res://scenes/blue-godot.tscn" id="1_4j81o"]
 [ext_resource type="PackedScene" uid="uid://w60lbvelgtkq" path="res://scenes/player.tscn" id="2_xbqd1"]
+[ext_resource type="PackedScene" uid="uid://b1xve4cuf0lj1" path="res://scenes/energy_bar.tscn" id="3_nud5o"]
 
 [node name="Level" type="Node2D" unique_id=1381351498]
 
@@ -41,3 +42,7 @@ scale = Vector2(0.66842157, 0.66842157)
 
 [node name="Player" parent="." unique_id=145763616 instance=ExtResource("2_xbqd1")]
 position = Vector2(377, 357)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1403063025]
+
+[node name="EnergyBar" parent="CanvasLayer" unique_id=1758024141 instance=ExtResource("3_nud5o")]

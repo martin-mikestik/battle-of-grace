@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bkm6mdr635hnw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dijpx"]
+bg_color = Color(0.16167542, 0.5564902, 0.4526676, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.55501336, 0.89413273, 0.60333866, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="ProgressBar" type="ProgressBar" unique_id=499195503]
+custom_minimum_size = Vector2(40, 15)
+theme_override_styles/fill = SubResource("StyleBoxFlat_dijpx")
+max_value = 1.0
+show_percentage = false

@@ -7,6 +7,10 @@ var has_prompt: bool = false
 
 const EXPLOSION = preload("uid://b5kv1hvj1080o")
 
+# -- energy system --
+var current_energy: int = 0
+var maximum_energy: int = 3
+
 
 @export var rotation_curve: Curve
 @export var duration: float = 0.8
