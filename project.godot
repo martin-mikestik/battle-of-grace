@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Agilitymaxxers"
+config/name="Battle of Grace"
 run/main_scene="uid://26yiiarp5j50"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/icon.svg"
