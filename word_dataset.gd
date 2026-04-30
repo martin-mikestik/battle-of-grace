@@ -9,6 +9,7 @@ var english_450k_filename: String = "res://assets/word_lists/english_450k.json"
 var english_misspelled_filename: String = "res://assets/word_lists/english_misspelled"
 var english_shakespearean_filename: String = "res://assets/word_lists/english_shakespearean.json"
 
+signal words_prepared
 
 var dict_str_to_pathname: Dictionary[String, String] = {
 	"english_100": english_100_filename,
@@ -26,6 +27,7 @@ var dict_str_to_wordset: Dictionary[String, Variant] = { }
 func _ready():
 	load_all_word_lists()
 	print(dict_str_to_wordset.get("english_100"))
+	words_prepared.emit()
 
 func load_all_word_lists():
 	for key in dict_str_to_pathname.keys():

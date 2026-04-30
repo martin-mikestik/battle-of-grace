@@ -5,8 +5,14 @@ extends Node
 const TEXT_INPUT = preload("uid://ukdg61uwdpi2")
 
 
-var possible_words: Array[String] = ["hello", "word", "enemy", "delta", "elegy"]
+var possible_words: Array = []
 
+func _ready():
+	WordDataset.words_prepared.connect(configure_possible_words)
+
+func configure_possible_words():
+	print("start ")
+	possible_words = WordDataset.dict_str_to_wordset.get("english_100")
 
 func generate_prompt() -> RichTextLabel:
 	var instance: RichTextLabel = TEXT_INPUT.instantiate()
