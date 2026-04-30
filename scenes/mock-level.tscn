@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://w60lbvelgtkq" path="res://scenes/player.tscn" id="2_xbqd1"]
 [ext_resource type="Script" uid="uid://c1xknq17r28rm" path="res://scripts/subviewport.gd" id="3_7u5ea"]
 [ext_resource type="PackedScene" uid="uid://b1xve4cuf0lj1" path="res://scenes/energy_bar.tscn" id="3_nud5o"]
+[ext_resource type="PackedScene" uid="uid://1l2rc6hptu1o" path="res://scenes/skills.tscn" id="5_q0xwh"]
 
 [node name="Level" type="Node2D" unique_id=1381351498]
 
@@ -28,7 +29,7 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Player" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport" unique_id=145763616 node_paths=PackedStringArray("energy_bar") instance=ExtResource("2_xbqd1")]
-position = Vector2(377, 357)
+position = Vector2(377, 347.92657)
 energy_bar = NodePath("../../../../../CanvasLayer/EnergyBar")
 
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport/Player" unique_id=1793065964]
@@ -77,7 +78,7 @@ other_subviewport = NodePath("../SubViewportContainer/SubViewport")
 
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer2/HBoxContainer/SubViewportContainer2" unique_id=1924007362]
 handle_input_locally = false
-size = Vector2i(576, 648)
+size = Vector2i(2, 2)
 render_target_update_mode = 0
 
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer2/HBoxContainer/SubViewportContainer2/SubViewport" unique_id=442505214]
@@ -86,3 +87,5 @@ position = Vector2(47, 329)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1403063025]
 
 [node name="EnergyBar" parent="CanvasLayer" unique_id=1758024141 instance=ExtResource("3_nud5o")]
+
+[node name="Skills" parent="CanvasLayer" unique_id=1374499931 instance=ExtResource("5_q0xwh")]

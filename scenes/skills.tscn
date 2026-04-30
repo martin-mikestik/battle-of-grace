@@ -24,6 +24,12 @@ grow_horizontal = 2
 
 [node name="SkillButton" parent="HBoxContainer" unique_id=590587036 instance=ExtResource("1_pq0ql")]
 layout_mode = 2
+my_text = "L1"
 
 [node name="SkillButton2" parent="HBoxContainer" unique_id=821263700 instance=ExtResource("1_pq0ql")]
 layout_mode = 2
+my_text = "L2"
+
+[node name="SkillButton3" parent="HBoxContainer" unique_id=1959395542 instance=ExtResource("1_pq0ql")]
+layout_mode = 2
+my_text = "L3"
