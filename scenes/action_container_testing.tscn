@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b8wbbqqsfldys"]
+
+[ext_resource type="Script" uid="uid://cr7iqiavmpqyc" path="res://scripts/action_container_testing.gd" id="1_lpr1d"]
+
+[node name="ActionContainerTesting" type="Node" unique_id=1209318432 node_paths=PackedStringArray("my_list")]
+script = ExtResource("1_lpr1d")
+my_list = ["", "", ""]
