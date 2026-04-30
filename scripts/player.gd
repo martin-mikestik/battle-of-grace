@@ -16,9 +16,62 @@ var maximum_energy: int = 3
 @export var rotation_curve: Curve
 @export var duration: float = 0.8
 
+
+func _ready():
+	connect_all_signals()
+	configure_start_energy_bar()
+
+
+func connect_all_signals():
+	InputHandler.key_press.connect(handle_key_presses)
+
+func handle_key_presses(key_press: String):
+	if key_press == "1":
+		add_energy_slots(1)
+	if key_press == "0":
+		add_energy_slots(3)
+	if key_press == "2":
+		fill_energy_slots(1)
+	if key_press == "3":
+		remove_energy_slots(1)
+
+#region Energy System
+
+func configure_start_energy_bar():
+	if energy_bar:
+		if not energy_bar.is_node_ready():
+			await energy_bar.ready
+		energy_bar.add_energy_slots(3)
+	else:
+		print("Error: There is no energy bar.")
+
+func add_energy_slots(num: int):
+	for i in range(num):
+		maximum_energy += 1
+		energy_bar.add_energy_slots(1)
+
+func remove_energy_slots(num: int):
+	for i in range(num):
+		if maximum_energy > 1:
+			if current_energy == maximum_energy:
+				current_energy -= 1
+			maximum_energy -= 1
+			energy_bar.remove_energy_slots(1)
+
+func fill_energy_slots(num: int):
+	for i in range(num):
+		if current_energy < maximum_energy:
+			current_energy += 1
+			energy_bar.fill_energy_slots(1)
+
+func print_energy_info():
+	print("energy: " + str(current_energy) + "/" + str(maximum_energy))
+
+#endregion
+
+
 func _process(delta):
 	handle_input()
-
 
 func handle_input():
 	if Input.is_action_just_pressed("LaunchPromptGeneration") and not has_prompt:
@@ -27,7 +80,11 @@ func handle_input():
 		prompt_labels.add_child(prompt_instance)
 		prompt_instance.prompt_finished.connect(_on_prompt_finished)
 
+
+
+
 func _physics_process(_delta: float) -> void:
+	
 	var direction := Input.get_vector("Left", "Right", "Up", "Down")
 	
 	if direction:
@@ -40,7 +97,6 @@ func _physics_process(_delta: float) -> void:
 
 func _on_prompt_finished():
 	has_prompt = false
-	
 	juicy_rotate(360)
 	
 func launch_explosion():

@@ -12,7 +12,6 @@ func _input(event: InputEvent) -> void:
 		# ASCII printable range is 32 (Space) to 126 (~)
 		if char_code >= 32 and char_code <= 126:
 			var character = char(char_code)
-			#print("Pressed: ", character)
 			key_press.emit(character)
 			
 		# Optional: If you want to allow Extended ASCII (127-255), 

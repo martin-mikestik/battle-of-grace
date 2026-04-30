@@ -9,23 +9,20 @@ var filled_slots: int = 0
 
 func _ready():
 	connect_all_signals()
+	print(h_box_container)
 
 func connect_all_signals():
-	InputHandler.key_press.connect(handle_key_presses)
+	pass
+	#InputHandler.key_press.connect(handle_key_presses)
 
 
-func handle_key_presses(key_press: String):
-	if key_press == "1":
-		add_energy_slots(1)
-	if key_press == "0":
-		add_energy_slots(3)
-	if key_press == "2":
-		fill_energy_slots(1)
-	if key_press == "3":
-		remove_energy_slots(1)
+
+
 
 func add_energy_slots(num: int):
 	for i in range(num):
+		if not h_box_container.is_node_ready():
+			await h_box_container.ready
 		var energy_slot_instance = ENERGY_SLOT.instantiate()
 		h_box_container.add_child(energy_slot_instance)
 		list_energy_slots.append(energy_slot_instance)
