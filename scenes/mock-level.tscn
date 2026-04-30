@@ -40,8 +40,9 @@ scale = Vector2(1.1225532, 1.1225532)
 position = Vector2(1017, 330)
 scale = Vector2(0.66842157, 0.66842157)
 
-[node name="Player" parent="." unique_id=145763616 instance=ExtResource("2_xbqd1")]
+[node name="Player" parent="." unique_id=145763616 node_paths=PackedStringArray("energy_bar") instance=ExtResource("2_xbqd1")]
 position = Vector2(377, 357)
+energy_bar = NodePath("../CanvasLayer/EnergyBar")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1403063025]
 

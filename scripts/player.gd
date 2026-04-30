@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 300.0
 @onready var prompt_labels: Node2D = $PromptLabels
+@export var energy_bar: Control = null
 
 var has_prompt: bool = false
 
