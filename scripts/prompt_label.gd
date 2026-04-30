@@ -4,6 +4,9 @@ extends RichTextLabel
 @export var unfinished_color: Color = Color(0.0, 0.0, 0.0, 0.616)
 @export var completed_color: Color = Color(1.0, 0.357, 0.29, 1.0)
 
+@export var effects: Node
+
+
 signal prompt_finished
 
 var next_necessary_letter_index: int = 0
@@ -19,8 +22,14 @@ func _process(delta):
 	
 func check_text():
 	if next_necessary_letter_index == len(expected_text):
-		prompt_finished.emit()
-		queue_free()
+		_on_prompt_completed()
+
+func _on_prompt_completed():
+	prompt_finished.emit()
+	for effect in effects.get_children():
+		effect._on_effect_completion()
+	queue_free()
+
 
 func get_needed_letter() -> String:
 	return expected_text[next_necessary_letter_index]

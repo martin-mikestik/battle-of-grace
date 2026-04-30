@@ -18,6 +18,7 @@ var maximum_energy: int = 3
 
 
 func _ready():
+	GameManager.player = self
 	connect_all_signals()
 	configure_start_energy_bar()
 

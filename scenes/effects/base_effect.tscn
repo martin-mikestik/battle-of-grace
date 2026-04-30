@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://rf382y4xnk0b"]
+
+[ext_resource type="Script" uid="uid://csffwiyj74vwj" path="res://scripts/effects/base_effect.gd" id="1_xd87x"]
+
+[node name="Effect" type="Node" unique_id=721593632]
+script = ExtResource("1_xd87x")

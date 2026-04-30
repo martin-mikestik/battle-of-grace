@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b5qfd2mm62ehx"]
+
+[ext_resource type="PackedScene" uid="uid://rf382y4xnk0b" path="res://scenes/effects/base_effect.tscn" id="1_nv0g3"]
+[ext_resource type="Script" uid="uid://cdu6e6df5sqyq" path="res://scripts/effects/add_energy_slot_effect.gd" id="2_b70cq"]
+
+[node name="Effect" unique_id=721593632 instance=ExtResource("1_nv0g3")]
+script = ExtResource("2_b70cq")

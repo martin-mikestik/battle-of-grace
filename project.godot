@@ -20,6 +20,7 @@ config/icon="res://assets/icon.svg"
 TextPromptGenerator="*uid://bnabg5717q75s"
 InputHandler="*uid://brnycr6gat0ai"
 RichLabelHelper="*uid://bfrbh876uwa06"
+GameManager="*uid://j10tmwnjw7e0"
 
 [input]
 
