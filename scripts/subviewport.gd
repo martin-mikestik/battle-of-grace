@@ -1,5 +1,3 @@
-@tool
-
 extends SubViewportContainer
 
 @export var other_subviewport: SubViewport = null
