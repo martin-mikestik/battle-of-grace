@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cal5c0r6b4sqg"]
+
+[ext_resource type="Script" uid="uid://c0ke55mhxfh6e" path="res://scenes/skills/skill_button.gd" id="1_7o3ts"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ekox"]
+bg_color = Color(0.67058825, 0.5294118, 0.79607844, 0.63529414)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7o3ts"]
+bg_color = Color(0.24840015, 0.24840015, 0.24840021, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="SkillButtonBackground" type="Panel" unique_id=590587036]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ekox")
+script = ExtResource("1_7o3ts")
+
+[node name="SkillButtonForeground" type="Panel" parent="." unique_id=1558969414]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7o3ts")
+
+[node name="Label" type="Label" parent="SkillButtonForeground" unique_id=248693452]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Ln"
+horizontal_alignment = 1
+vertical_alignment = 1
