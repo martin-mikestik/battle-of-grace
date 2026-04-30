@@ -13,7 +13,6 @@ var current_energy: int = 0
 var maximum_energy: int = 3
 
 
-@export var rotation_curve: Curve
 @export var duration: float = 0.8
 
 
@@ -98,25 +97,24 @@ func _physics_process(_delta: float) -> void:
 
 func _on_prompt_finished():
 	has_prompt = false
-	juicy_rotate(360)
+	#juicy_rotate(360)
 	
-func launch_explosion():
+func launch_explosion(color_modulate: Color):
+	print("launched here")
 	var instance = EXPLOSION.instantiate()
+	instance.modulate = color_modulate
 	add_child(instance)
 	instance.explode()
 
-func juicy_rotate(target_rotation_deg: float):
+func juicy_rotate(target_rotation_deg: float, duration: float):
 	var tween = create_tween()
-	# Convert degrees to radians for the rotation property
 	var target_rad = deg_to_rad(target_rotation_deg)
 	
-	
-	
-	tween.tween_property(self, "rotation", target_rad, 0.6)\
+	tween.tween_property(self, "rotation", target_rad, duration)\
 		.set_trans(Tween.TRANS_BACK)\
 		.set_ease(Tween.EASE_IN_OUT)
 		
 	#await tween.finished
-	await get_tree().create_timer(0.4).timeout
-	launch_explosion()
+	#await get_tree().create_timer(0.4).timeout
+	#launch_explosion()
 	
