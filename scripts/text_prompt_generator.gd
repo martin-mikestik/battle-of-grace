@@ -11,7 +11,6 @@ func _ready():
 	WordDataset.words_prepared.connect(configure_possible_words)
 
 func configure_possible_words():
-	print("start ")
 	possible_words = WordDataset.dict_enum_to_wordset.get(WordDataset.WORDSET.english_100)
 
 func generate_prompt() -> RichTextLabel:

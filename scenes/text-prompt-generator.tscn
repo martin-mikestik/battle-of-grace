@@ -4,3 +4,4 @@
 
 [node name="TextPromptGenerator" type="Node" unique_id=1082744145]
 script = ExtResource("1_ww8d2")
+num_words_range = Vector2i(3, 3)
