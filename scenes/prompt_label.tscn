@@ -2,9 +2,6 @@
 
 [ext_resource type="FontFile" uid="uid://c3limxn176pds" path="res://assets/fonts/JetBrainsMonoNL-Regular.ttf" id="1_qlc7c"]
 [ext_resource type="Script" uid="uid://d3sn8i1x3nytf" path="res://scripts/prompt_label.gd" id="2_l5qe0"]
-[ext_resource type="PackedScene" uid="uid://dm83vurc8w77x" path="res://scenes/effects/fill_energy_effect.tscn" id="3_l5qe0"]
-[ext_resource type="PackedScene" uid="uid://cpnepyu07vcx3" path="res://scenes/effects/juicy_rotation_effect.tscn" id="4_yg8gt"]
-[ext_resource type="PackedScene" uid="uid://cbdq67eenriyx" path="res://scenes/effects/explosion_effect.tscn" id="5_kias0"]
 
 [sub_resource type="Theme" id="Theme_kcjo6"]
 Label/constants/outline_size = 7
@@ -30,15 +27,4 @@ bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_l5qe0")
-effects = NodePath("Effects")
-
-[node name="Effects" type="Node" parent="." unique_id=137810376]
-
-[node name="FillEnergyEffect" parent="Effects" unique_id=721593632 instance=ExtResource("3_l5qe0")]
-
-[node name="RotationEffect" parent="Effects" unique_id=1088469974 instance=ExtResource("4_yg8gt")]
-duration = 0.6
-
-[node name="ExplosionEffect" parent="Effects" unique_id=1579686575 instance=ExtResource("5_kias0")]
-delay = 0.4
-modulate_color = Color(0.49803922, 1, 0.83137256, 1)
+effects = NodePath("")
