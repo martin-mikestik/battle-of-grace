@@ -12,7 +12,7 @@ func _ready():
 
 func configure_possible_words():
 	print("start ")
-	possible_words = WordDataset.dict_str_to_wordset.get("english_100")
+	possible_words = WordDataset.dict_enum_to_wordset.get(WordDataset.WORDSET.english_100)
 
 func generate_prompt() -> RichTextLabel:
 	var instance: RichTextLabel = TEXT_INPUT.instantiate()

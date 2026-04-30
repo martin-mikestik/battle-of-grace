@@ -11,28 +11,39 @@ var english_shakespearean_filename: String = "res://assets/word_lists/english_sh
 
 signal words_prepared
 
-var dict_str_to_pathname: Dictionary[String, String] = {
-	"english_100": english_100_filename,
-	"english_1k": english_1k_filename,
-	"english_5k": english_5k_filename,
-	"english_10k": english_10k_filename,
-	"english_25k": english_25k_filename,
-	"english_450k": english_450k_filename,
-	"english_misspelled": english_misspelled_filename,
-	"english_shakespearean": english_shakespearean_filename,
+enum WORDSET {
+	english_100,
+	english_1k,
+	english_5k,
+	english_10k,
+	english_25k,
+	english_450k,
+	english_misspelled,
+	english_shakespearean
 }
 
-var dict_str_to_wordset: Dictionary[String, Variant] = { }
+var dict_enum_to_pathname: Dictionary[WORDSET, String] = {
+	WORDSET.english_100: english_100_filename,
+	WORDSET.english_1k: english_1k_filename,
+	WORDSET.english_5k: english_5k_filename,
+	WORDSET.english_10k: english_10k_filename,
+	WORDSET.english_25k: english_25k_filename,
+	WORDSET.english_450k: english_450k_filename,
+	WORDSET.english_misspelled: english_misspelled_filename,
+	WORDSET.english_shakespearean: english_shakespearean_filename,
+}
+
+var dict_enum_to_wordset: Dictionary[WORDSET, Variant] = { }
 
 func _ready():
 	load_all_word_lists()
-	print(dict_str_to_wordset.get("english_100"))
+	print(dict_enum_to_wordset.get("english_100"))
 	words_prepared.emit()
 
 func load_all_word_lists():
-	for key in dict_str_to_pathname.keys():
-		var path = dict_str_to_pathname.get(key)
-		dict_str_to_wordset[key] = load_word_list(path)
+	for key in dict_enum_to_pathname.keys():
+		var path = dict_enum_to_pathname.get(key)
+		dict_enum_to_wordset[key] = load_word_list(path)
 
 func load_word_list(path: String) -> Array:
 	if not FileAccess.file_exists(path):
