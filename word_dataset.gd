@@ -35,9 +35,15 @@ var dict_enum_to_pathname: Dictionary[WORDSET, String] = {
 
 var dict_enum_to_wordset: Dictionary[WORDSET, Variant] = { }
 
+# 1311 when parsing all words
+# 1013, 904 when parsing no words
+# parsing English datasets and loading them from JSON takes cca 400 ms
 func _ready():
+	var ms1 = Time.get_ticks_msec()
 	load_all_word_lists()
-	print(dict_enum_to_wordset.get("english_100"))
+	#print(dict_enum_to_wordset.get(WORDSET.english_100))
+	var ms2 = Time.get_ticks_msec()
+	print(ms2 - ms1)
 	words_prepared.emit()
 
 func load_all_word_lists():
