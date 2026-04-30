@@ -1,7 +1,5 @@
 class_name SkillStep
-extends Resource
+extends Node
 
-
-
-@export var action: Variant
-@export var delay_after: float 
+@export var action: Node
+@export var delay_after: float = 0.0

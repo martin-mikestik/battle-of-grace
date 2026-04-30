@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://b8wbbqqsfldys"]
 
-[ext_resource type="Script" uid="uid://cr7iqiavmpqyc" path="res://scripts/action_container_testing.gd" id="1_lpr1d"]
+[sub_resource type="GDScript" id="GDScript_rm1g1"]
+script/source = "extends Node
+
+@export var my_list: Array[SkillStep] = []
+"
 
 [node name="ActionContainerTesting" type="Node" unique_id=1209318432 node_paths=PackedStringArray("my_list")]
-script = ExtResource("1_lpr1d")
-my_list = ["", "", ""]
+script = SubResource("GDScript_rm1g1")
+my_list = [null, null, null]

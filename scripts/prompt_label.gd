@@ -26,9 +26,11 @@ func check_text():
 
 func _on_prompt_completed():
 	prompt_finished.emit()
+	
 	for effect in effects.get_children():
 		effect._on_effect_completion()
 	queue_free()
+
 
 
 func get_needed_letter() -> String:

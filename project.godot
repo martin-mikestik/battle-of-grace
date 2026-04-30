@@ -22,6 +22,7 @@ InputHandler="*uid://brnycr6gat0ai"
 RichLabelHelper="*uid://bfrbh876uwa06"
 GameManager="*uid://j10tmwnjw7e0"
 WordDataset="*uid://c8uef8je7e3w6"
+SkillLauncher="*uid://du7au56w8swjr"
 
 [input]
 

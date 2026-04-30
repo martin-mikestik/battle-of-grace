@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cuub86fxcqvlx"]
+
+[ext_resource type="Script" uid="uid://cqfvttyaityff" path="res://scenes/skills/skill_step.gd" id="1_jjsq5"]
+
+[node name="SkillStep" type="Node" unique_id=1592034503]
+script = ExtResource("1_jjsq5")

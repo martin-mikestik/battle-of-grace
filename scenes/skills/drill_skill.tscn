@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://blnptc5joyjjt"]
+
+[ext_resource type="PackedScene" uid="uid://c8cbf80qtamtq" path="res://scenes/skills/skill.tscn" id="1_wemip"]
+[ext_resource type="PackedScene" uid="uid://cuub86fxcqvlx" path="res://scenes/skills/skill_step.tscn" id="2_x3wpr"]
+
+[node name="Drill_Skill" unique_id=873861011 instance=ExtResource("1_wemip")]
+
+[node name="SkillStep" parent="." index="0" unique_id=1592034503 node_paths=PackedStringArray("action") instance=ExtResource("2_x3wpr")]
+action = NodePath("../Effects/RotationEffect")
+delay_after = 0.4
+
+[node name="SkillStep2" parent="." index="1" unique_id=635922643 node_paths=PackedStringArray("action") instance=ExtResource("2_x3wpr")]
+action = NodePath("../Effects/ExplosionEffect")

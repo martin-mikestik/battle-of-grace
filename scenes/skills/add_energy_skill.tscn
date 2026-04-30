@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ybse84kq15yv"]
+
+[ext_resource type="PackedScene" uid="uid://c8cbf80qtamtq" path="res://scenes/skills/skill.tscn" id="1_mf0xc"]
+[ext_resource type="PackedScene" uid="uid://cuub86fxcqvlx" path="res://scenes/skills/skill_step.tscn" id="2_rqxfs"]
+
+[node name="EnergySkill" unique_id=873861011 instance=ExtResource("1_mf0xc")]
+
+[node name="SkillStep" parent="." index="0" unique_id=1592034503 node_paths=PackedStringArray("action") instance=ExtResource("2_rqxfs")]
+action = NodePath("../Effects/AddEnergySlotEffect")

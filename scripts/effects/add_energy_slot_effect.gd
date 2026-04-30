@@ -1,6 +1,6 @@
 extends BaseEffect
 
-func apply_effect_on_player():
+func set_off():
 	print("Energy slot added to player.")
-	player.add_energy_slots(1)
+	GameManager.player.add_energy_slots(1)
 	
