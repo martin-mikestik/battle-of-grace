@@ -6,7 +6,7 @@ var english_5k_filename: String = "res://assets/word_lists/english_5k.json"
 var english_10k_filename: String = "res://assets/word_lists/english_10k.json"
 var english_25k_filename: String = "res://assets/word_lists/english_25k.json"
 var english_450k_filename: String = "res://assets/word_lists/english_450k.json"
-var english_misspelled_filename: String = "res://assets/word_lists/english_misspelled"
+var english_misspelled_filename: String = "res://assets/word_lists/english_commonly_misspelled.json"
 var english_shakespearean_filename: String = "res://assets/word_lists/english_shakespearean.json"
 
 signal words_prepared
@@ -35,13 +35,10 @@ var dict_enum_to_pathname: Dictionary[WORDSET, String] = {
 
 var dict_enum_to_wordset: Dictionary[WORDSET, Variant] = { }
 
-# 1311 when parsing all words
-# 1013, 904 when parsing no words
 # parsing English datasets and loading them from JSON takes cca 400 ms
 func _ready():
 	var ms1 = Time.get_ticks_msec()
 	load_all_word_lists()
-	#print(dict_enum_to_wordset.get(WORDSET.english_100))
 	var ms2 = Time.get_ticks_msec()
 	print(ms2 - ms1)
 	words_prepared.emit()

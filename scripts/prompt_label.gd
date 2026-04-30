@@ -15,7 +15,7 @@ func _ready():
 	InputHandler.key_press.connect(get_pressed_key)
 	text = RichLabelHelper.add_color_tag(expected_text, unfinished_color.to_html())
 
-func _process(delta):
+func _process(_delta):
 	
 	check_text()
 	

@@ -43,7 +43,6 @@ func remove_energy_slots(num: int):
 func fill_energy_slots(num: int):
 	for i in range(num):
 		if filled_slots < num_slots:
-			var slot_to_fill_index: int = filled_slots
 			filled_slots += 1
 			recalculate_filled_slots()
 		

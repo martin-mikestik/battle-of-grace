@@ -1,8 +1,8 @@
 extends Node
 
-@export var num_words_range: Vector2i = Vector2i(1, 3)
+@export var num_words_range: Vector2i = Vector2i(3, 3)
 
-const TEXT_INPUT = preload("uid://ukdg61uwdpi2")
+const PROMPT_LABEL = preload("uid://ukdg61uwdpi2")
 
 
 var possible_words: Array = []
@@ -11,10 +11,10 @@ func _ready():
 	WordDataset.words_prepared.connect(configure_possible_words)
 
 func configure_possible_words():
-	possible_words = WordDataset.dict_enum_to_wordset.get(WordDataset.WORDSET.english_100)
+	possible_words = WordDataset.dict_enum_to_wordset.get(WordDataset.WORDSET.english_shakespearean)
 
 func generate_prompt() -> RichTextLabel:
-	var instance: RichTextLabel = TEXT_INPUT.instantiate()
+	var instance: RichTextLabel = PROMPT_LABEL.instantiate()
 	instance.expected_text = generate_string()
 	instance.text = instance.expected_text
 	return instance
@@ -30,6 +30,5 @@ func generate_string() -> String:
 
 	var expected_text_length: int = len(expected_text)
 	expected_text = expected_text.erase(expected_text_length - 1)
-	
-	#print(expected_text)
+
 	return expected_text

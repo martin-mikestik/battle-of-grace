@@ -70,7 +70,7 @@ func print_energy_info():
 #endregion
 
 
-func _process(delta):
+func _process(_delta):
 	handle_input()
 
 func handle_input():
@@ -106,11 +106,11 @@ func launch_explosion(color_modulate: Color):
 	add_child(instance)
 	instance.explode()
 
-func juicy_rotate(target_rotation_deg: float, duration: float):
+func juicy_rotate(target_rotation_deg: float, duration_rotation: float):
 	var tween = create_tween()
 	var target_rad = deg_to_rad(target_rotation_deg)
 	
-	tween.tween_property(self, "rotation", target_rad, duration)\
+	tween.tween_property(self, "rotation", target_rad, duration_rotation)\
 		.set_trans(Tween.TRANS_BACK)\
 		.set_ease(Tween.EASE_IN_OUT)
 		
