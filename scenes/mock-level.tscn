@@ -2,47 +2,85 @@
 
 [ext_resource type="PackedScene" uid="uid://b7ld6s88ydubw" path="res://scenes/blue-godot.tscn" id="1_4j81o"]
 [ext_resource type="PackedScene" uid="uid://w60lbvelgtkq" path="res://scenes/player.tscn" id="2_xbqd1"]
+[ext_resource type="Script" uid="uid://c1xknq17r28rm" path="res://scripts/subviewport.gd" id="3_7u5ea"]
 [ext_resource type="PackedScene" uid="uid://b1xve4cuf0lj1" path="res://scenes/energy_bar.tscn" id="3_nud5o"]
 
 [node name="Level" type="Node2D" unique_id=1381351498]
 
-[node name="Background" type="Node2D" parent="." unique_id=1023409328]
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=904346939]
 
-[node name="BlueGodot" parent="Background" unique_id=1324135443 instance=ExtResource("1_4j81o")]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2" unique_id=370496215]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer2/HBoxContainer" unique_id=825335194]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer2/HBoxContainer/SubViewportContainer" unique_id=1354232415]
+handle_input_locally = false
+size = Vector2i(576, 648)
+render_target_update_mode = 4
+
+[node name="Player" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport" unique_id=145763616 node_paths=PackedStringArray("energy_bar") instance=ExtResource("2_xbqd1")]
+position = Vector2(377, 357)
+energy_bar = NodePath("../../../../../CanvasLayer/EnergyBar")
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport/Player" unique_id=1793065964]
+
+[node name="Background" type="Node2D" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1023409328]
+
+[node name="BlueGodot" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport/Background" unique_id=1324135443 instance=ExtResource("1_4j81o")]
 position = Vector2(227, 225)
 
-[node name="BlueGodot2" parent="Background" unique_id=152094998 instance=ExtResource("1_4j81o")]
+[node name="BlueGodot2" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport/Background" unique_id=152094998 instance=ExtResource("1_4j81o")]
 position = Vector2(447, 446)
 
-[node name="BlueGodot3" parent="Background" unique_id=900176483 instance=ExtResource("1_4j81o")]
+[node name="BlueGodot3" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport/Background" unique_id=900176483 instance=ExtResource("1_4j81o")]
 position = Vector2(797, 184)
 
-[node name="BlueGodot4" parent="Background" unique_id=1086576647 instance=ExtResource("1_4j81o")]
+[node name="BlueGodot4" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport/Background" unique_id=1086576647 instance=ExtResource("1_4j81o")]
 position = Vector2(721, 475)
 
-[node name="BlueGodot5" parent="Background" unique_id=2011961595 instance=ExtResource("1_4j81o")]
+[node name="BlueGodot5" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport/Background" unique_id=2011961595 instance=ExtResource("1_4j81o")]
 position = Vector2(578, 251)
 scale = Vector2(0.59471583, 0.59471583)
 
-[node name="BlueGodot9" parent="Background" unique_id=1459707375 instance=ExtResource("1_4j81o")]
+[node name="BlueGodot9" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport/Background" unique_id=1459707375 instance=ExtResource("1_4j81o")]
 position = Vector2(362, 75.999985)
 scale = Vector2(0.59471583, 0.59471583)
 
-[node name="BlueGodot6" parent="Background" unique_id=780139823 instance=ExtResource("1_4j81o")]
+[node name="BlueGodot6" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport/Background" unique_id=780139823 instance=ExtResource("1_4j81o")]
 position = Vector2(104, 493)
 scale = Vector2(0.71860373, 0.71860373)
 
-[node name="BlueGodot7" parent="Background" unique_id=2055347131 instance=ExtResource("1_4j81o")]
+[node name="BlueGodot7" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport/Background" unique_id=2055347131 instance=ExtResource("1_4j81o")]
 position = Vector2(1003.99994, 535)
 scale = Vector2(1.1225532, 1.1225532)
 
-[node name="BlueGodot8" parent="Background" unique_id=1860726724 instance=ExtResource("1_4j81o")]
+[node name="BlueGodot8" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport/Background" unique_id=1860726724 instance=ExtResource("1_4j81o")]
 position = Vector2(1017, 330)
 scale = Vector2(0.66842157, 0.66842157)
 
-[node name="Player" parent="." unique_id=145763616 node_paths=PackedStringArray("energy_bar") instance=ExtResource("2_xbqd1")]
-position = Vector2(377, 357)
-energy_bar = NodePath("../CanvasLayer/EnergyBar")
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="CanvasLayer2/HBoxContainer" unique_id=1509459314 node_paths=PackedStringArray("other_subviewport")]
+layout_mode = 2
+size_flags_horizontal = 3
+stretch = true
+script = ExtResource("3_7u5ea")
+other_subviewport = NodePath("../SubViewportContainer/SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer2/HBoxContainer/SubViewportContainer2" unique_id=1924007362]
+handle_input_locally = false
+size = Vector2i(576, 648)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer2/HBoxContainer/SubViewportContainer2/SubViewport" unique_id=442505214]
+position = Vector2(47, 329)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1403063025]
 
