@@ -3,8 +3,9 @@ shader_type canvas_item;
 
 
 uniform float degrees_uncovered = 60.0;
-uniform float max_distance_affected = 15;
-uniform vec4 regular_color = vec4(0.8, 0.1, 0.1, 1.0);
+uniform float max_distance_affected = 45;
+//uniform vec4 regular_color = vec4(0.8, 0.1, 0.1, 1.0);
+//uniform vec4 regular_color = COLOR;
 
 void fragment() {
 	// Called for every pixel the material is visible on.
@@ -41,10 +42,10 @@ void fragment() {
 	
 	if (distance_degrees <= max_distance_affected) {
 		float percentage = distance_degrees / max_distance_affected;
-		COLOR = regular_color;
-		COLOR.a = percentage;
+
+		COLOR.a = COLOR.a * percentage;
 	} else {
-		COLOR = regular_color;
+		COLOR = COLOR;
 	}
 	
 }

@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://cal5c0r6b4sqg"]
 
+[ext_resource type="Shader" uid="uid://otlgg8tdgajr" path="res://assets/shaders/gradient.gdshader" id="1_3mwa4"]
 [ext_resource type="Script" uid="uid://c0ke55mhxfh6e" path="res://scenes/skills/skill_button.gd" id="1_7o3ts"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_43hlx"]
+shader = ExtResource("1_3mwa4")
+shader_parameter/degrees_uncovered = 139.65
+shader_parameter/max_distance_affected = 43.965
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ekox"]
-bg_color = Color(0.67058825, 0.5294118, 0.79607844, 0.63529414)
+bg_color = Color(0.7872292, 0.51722866, 0.4987312, 0.63529414)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -17,12 +23,13 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [node name="SkillButtonBackground" type="Panel" unique_id=590587036]
+material = SubResource("ShaderMaterial_43hlx")
 custom_minimum_size = Vector2(50, 50)
 offset_right = 50.0
 offset_bottom = 50.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ekox")
 script = ExtResource("1_7o3ts")
-original_color = Color(0.67058825, 0.5294118, 0.79607844, 0.63529414)
+original_color = Color(0.6784314, 0.5372549, 0.8, 1)
 active_color = Color(0.94662315, 0.5528665, 0.74855477, 1)
 
 [node name="SkillButtonForeground" type="Panel" parent="." unique_id=1558969414]
