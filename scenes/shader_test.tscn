@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cbocp0j3t6f58"]
 
-[ext_resource type="Shader" uid="uid://cfgb4rus5pkxi" path="res://assets/shaders/cooldown.gdshader" id="1_3x27y"]
+[ext_resource type="Shader" uid="uid://otlgg8tdgajr" path="res://assets/shaders/gradient.gdshader" id="1_3x27y"]
 [ext_resource type="Texture2D" uid="uid://dge6uw77bkr6r" path="res://assets/icon.svg" id="1_im7wb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sju7m"]
 shader = ExtResource("1_3x27y")
 shader_parameter/degrees_uncovered = 90.0
+shader_parameter/max_distance_affected = 15.0
+shader_parameter/regular_color = Vector4(0.8, 0.1, 0.1, 1)
 
 [node name="ShaderTest" type="Node2D" unique_id=2116020881]
 
