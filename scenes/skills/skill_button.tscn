@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_43hlx"]
 shader = ExtResource("1_3mwa4")
-shader_parameter/degrees_uncovered = 45.0
+shader_parameter/degrees_uncovered = 60.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ekox"]
 bg_color = Color(0.7872292, 0.51722866, 0.4987312, 0.63529414)

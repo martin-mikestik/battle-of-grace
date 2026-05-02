@@ -93,7 +93,7 @@ func update_cooldown_shader():
 	var shader_uncovered_degrees = 0
 	var percentage_should_uncover = (current_time - last_time_used) / (cooldown_time * 1000)
 	if percentage_should_uncover > 1:
-		percentage_should_uncover = 0
+		percentage_should_uncover = 1
 	shader_uncovered_degrees = 360.0 * percentage_should_uncover
 	material.set_shader_parameter("degrees_uncovered", shader_uncovered_degrees)
 
