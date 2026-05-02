@@ -1,4 +1,4 @@
-# skill.gd
+# skill.gd (singleton!)
 class_name Skill
 extends Node
 

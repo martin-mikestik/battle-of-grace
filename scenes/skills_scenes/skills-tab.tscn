@@ -2,8 +2,21 @@
 
 [ext_resource type="Script" uid="uid://ic1vbxkc6atc" path="res://scripts/skills.gd" id="1_r687f"]
 [ext_resource type="PackedScene" uid="uid://cal5c0r6b4sqg" path="res://scenes/skills_scenes/skill_button.tscn" id="2_a5r6w"]
+[ext_resource type="Shader" uid="uid://cfgb4rus5pkxi" path="res://assets/shaders/cooldown.gdshader" id="3_a5r6w"]
 
-[node name="Skills" type="Control" unique_id=1374499931]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jx3ed"]
+shader = ExtResource("3_a5r6w")
+shader_parameter/degrees_uncovered = 60.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a5r6w"]
+shader = ExtResource("3_a5r6w")
+shader_parameter/degrees_uncovered = 60.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wr6xl"]
+shader = ExtResource("3_a5r6w")
+shader_parameter/degrees_uncovered = 60.0
+
+[node name="Skills" type="Control" unique_id=1374499931 node_paths=PackedStringArray("skill_button_background", "skill_button_background_2")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +24,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r687f")
+skill_button_background = NodePath("HBoxContainer/SkillButton1")
+skill_button_background_2 = NodePath("HBoxContainer/SkillButton2")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1097736461]
 layout_mode = 1
@@ -22,19 +37,20 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
-[node name="SkillButton" parent="HBoxContainer" unique_id=590587036 instance=ExtResource("2_a5r6w")]
+[node name="SkillButton1" parent="HBoxContainer" unique_id=590587036 instance=ExtResource("2_a5r6w")]
+material = SubResource("ShaderMaterial_jx3ed")
 layout_mode = 2
-my_text = "L1"
 necessary_button = "1"
-cooldown_time = 5.0
-
-[node name="SkillButton2" parent="HBoxContainer" unique_id=821263700 instance=ExtResource("2_a5r6w")]
-layout_mode = 2
-my_text = "L2"
+necessary_energy = 0
 cooldown_time = 2.0
 
-[node name="SkillButton3" parent="HBoxContainer" unique_id=1959395542 instance=ExtResource("2_a5r6w")]
+[node name="SkillButton2" parent="HBoxContainer" unique_id=1399120102 instance=ExtResource("2_a5r6w")]
+material = SubResource("ShaderMaterial_a5r6w")
 layout_mode = 2
-my_text = "L3"
+
+[node name="SkillButton3" parent="HBoxContainer" unique_id=1857821328 instance=ExtResource("2_a5r6w")]
+material = SubResource("ShaderMaterial_wr6xl")
+layout_mode = 2
 necessary_button = "3"
-cooldown_time = 4.0
+necessary_energy = 2
+cooldown_time = 3.0

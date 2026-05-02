@@ -21,7 +21,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="SkillButtonBackground" type="Panel" unique_id=590587036]
+[node name="SkillButton" type="Panel" unique_id=590587036]
 material = SubResource("ShaderMaterial_43hlx")
 custom_minimum_size = Vector2(50, 50)
 offset_right = 50.0
