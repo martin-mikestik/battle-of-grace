@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cal5c0r6b4sqg"]
 
 [ext_resource type="Shader" uid="uid://cfgb4rus5pkxi" path="res://assets/shaders/cooldown.gdshader" id="1_3mwa4"]
-[ext_resource type="Script" uid="uid://c0ke55mhxfh6e" path="res://scenes/skills/skill_button.gd" id="1_7o3ts"]
+[ext_resource type="Script" uid="uid://c0ke55mhxfh6e" path="res://scripts/skills_scripts/skill_button.gd" id="1_7o3ts"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_43hlx"]
 shader = ExtResource("1_3mwa4")
@@ -28,9 +28,11 @@ offset_right = 50.0
 offset_bottom = 50.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ekox")
 script = ExtResource("1_7o3ts")
+is_unlocked = true
 original_color = Color(0.6784314, 0.5372549, 0.8, 1)
-active_color = Color(0.94662315, 0.5528665, 0.74855477, 1)
+active_color = Color(0.7882353, 0.5176471, 0.49803922, 1)
 my_text = "L5"
+cooldown_time = 1.0
 
 [node name="SkillButtonForeground" type="Panel" parent="." unique_id=1558969414]
 layout_mode = 1
@@ -48,6 +50,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 38.0
+offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)

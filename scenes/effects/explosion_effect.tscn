@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://cbdq67eenriyx"]
-
-[ext_resource type="PackedScene" uid="uid://rf382y4xnk0b" path="res://scenes/effects/base_effect.tscn" id="1_5ssc0"]
-[ext_resource type="Script" uid="uid://dpl0il7h7hm4v" path="res://scripts/effects/explosion_effect.gd" id="2_ss4gf"]
-
-[node name="ExplosionEffect" unique_id=721593632 instance=ExtResource("1_5ssc0")]
-script = ExtResource("2_ss4gf")

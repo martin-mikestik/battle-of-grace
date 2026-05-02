@@ -13,7 +13,7 @@ config_version=5
 config/name="Battle of Grace"
 run/main_scene="uid://26yiiarp5j50"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://assets/icon.svg"
+config/icon="res://assets/sprites/icon.svg"
 
 [autoload]
 
@@ -23,6 +23,12 @@ RichLabelHelper="*uid://bfrbh876uwa06"
 GameManager="*uid://j10tmwnjw7e0"
 WordDataset="*uid://c8uef8je7e3w6"
 SkillLauncher="*uid://du7au56w8swjr"
+
+[file_customization]
+
+folder_colors={
+"res://scenes/skills_scenes/": "red"
+}
 
 [input]
 

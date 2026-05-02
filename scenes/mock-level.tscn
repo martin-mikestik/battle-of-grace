@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://w60lbvelgtkq" path="res://scenes/player.tscn" id="2_xbqd1"]
 [ext_resource type="Script" uid="uid://c1xknq17r28rm" path="res://scripts/subviewport.gd" id="3_7u5ea"]
 [ext_resource type="PackedScene" uid="uid://b1xve4cuf0lj1" path="res://scenes/energy_bar.tscn" id="3_nud5o"]
-[ext_resource type="PackedScene" uid="uid://1l2rc6hptu1o" path="res://scenes/skills.tscn" id="5_q0xwh"]
-[ext_resource type="PackedScene" uid="uid://blnptc5joyjjt" path="res://scenes/skills/drill_skill.tscn" id="6_6b2cx"]
+[ext_resource type="PackedScene" uid="uid://1l2rc6hptu1o" path="res://scenes/skills_scenes/skills-tab.tscn" id="5_q0xwh"]
+[ext_resource type="PackedScene" uid="uid://blnptc5joyjjt" path="res://scenes/skills_scenes/drill_skill.tscn" id="6_6b2cx"]
 
 [node name="Level" type="Node2D" unique_id=1381351498]
 

@@ -1,7 +1,7 @@
 extends Panel
 
-var is_unlocked: bool = false
-
+@export var is_unlocked: bool = false
+var is_l_pressed: bool = false
 
 var new_stylebox = StyleBoxFlat.new()
 var inactive_stylebox: StyleBox = null
@@ -11,12 +11,13 @@ var inactive_stylebox: StyleBox = null
 @onready var label: Label = $SkillButtonForeground/Label
 
 @export var my_text: String = ""
+@export var necessary_button: String = "2"
 
 var necessary_energy: int = 3
 
 # cooldown
 var current_time: int = 0
-var cooldown_time: float = 5
+@export var cooldown_time: float = 5
 var last_time_used: float = 0 # in unix milliseconds
 var cooldown_expired: bool = false
 
@@ -24,11 +25,16 @@ var cooldown_expired: bool = false
 var my_material: Material = null
 
 func _ready():
+	connect_all_signals()
 	current_time = Time.get_unix_time_from_system() * 1000
 	last_time_used = current_time
-	label.text = my_text
 	inactive_stylebox = get_theme_stylebox("panel")
 	original_color = inactive_stylebox.bg_color
+	my_text = "L" + necessary_button
+	label.text = my_text
+	
+func connect_all_signals():
+	InputHandler.key_press.connect(handle_key_presses)
 
 func _process(_delta):
 	recalculate_flags()
@@ -41,6 +47,12 @@ func handle_user_input():
 	if Input.is_action_just_released("StartSkills"):
 		make_passive()
 
+func handle_key_presses(key_press: String):
+	print(key_press)
+	print(necessary_button)
+	if key_press == necessary_button:
+		try_set_off()
+
 func recalculate_flags():
 	current_time = Time.get_unix_time_from_system() * 1000
 	cooldown_expired = current_time - last_time_used > cooldown_time * 1000
@@ -51,10 +63,12 @@ func handle_visuals():
 func make_active():
 	#add_theme_stylebox_override("panel", new_stylebox)
 	print("made active")
-	set_off()
+	is_l_pressed = true
+	#set_off()
 	inactive_stylebox.bg_color = active_color
 
 func make_passive():
+	is_l_pressed = false
 	inactive_stylebox.bg_color = original_color
 	#add_theme_stylebox_override("panel", inactive_stylebox)
 
@@ -72,7 +86,7 @@ func set_off():
 	last_time_used = Time.get_unix_time_from_system() * 1000
 	deplete_user_energy()
 	
-	print("Button " + name + " was set off.")
+	#print("Button " + name + " was set off.")
 
 func get_user_energy():
 	if GameManager.player:

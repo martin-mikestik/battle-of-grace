@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c8cbf80qtamtq"]
 
 [ext_resource type="Script" uid="uid://bf2gt3rtoc8t6" path="res://scripts/skill.gd" id="1_nhdbg"]
-[ext_resource type="PackedScene" uid="uid://b5qfd2mm62ehx" path="res://scenes/effects/add_energy_slot_effect.tscn" id="2_qfvlo"]
-[ext_resource type="PackedScene" uid="uid://cbdq67eenriyx" path="res://scenes/effects/explosion_effect.tscn" id="3_p0sll"]
-[ext_resource type="PackedScene" uid="uid://dm83vurc8w77x" path="res://scenes/effects/fill_energy_effect.tscn" id="4_3c8no"]
-[ext_resource type="PackedScene" uid="uid://cpnepyu07vcx3" path="res://scenes/effects/juicy_rotation_effect.tscn" id="5_tv3ks"]
+[ext_resource type="PackedScene" uid="uid://b5qfd2mm62ehx" path="res://scenes/effects_scenes/add_energy_slot_effect.tscn" id="2_qfvlo"]
+[ext_resource type="PackedScene" uid="uid://cbdq67eenriyx" path="res://scenes/effects_scenes/explosion_effect.tscn" id="3_p0sll"]
+[ext_resource type="PackedScene" uid="uid://dm83vurc8w77x" path="res://scenes/effects_scenes/fill_energy_effect.tscn" id="4_3c8no"]
+[ext_resource type="PackedScene" uid="uid://cpnepyu07vcx3" path="res://scenes/effects_scenes/juicy_rotation_effect.tscn" id="5_tv3ks"]
 
 [node name="Skill" type="Node" unique_id=873861011]
 script = ExtResource("1_nhdbg")

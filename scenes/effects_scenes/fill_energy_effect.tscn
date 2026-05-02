@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dm83vurc8w77x"]
+
+[ext_resource type="PackedScene" uid="uid://rf382y4xnk0b" path="res://scenes/effects_scenes/base_effect.tscn" id="1_tgp30"]
+[ext_resource type="Script" uid="uid://hfobwhbm80cb" path="res://scripts/effects_scripts/fill_energy_effect.gd" id="2_smohn"]
+
+[node name="FillEnergyEffect" unique_id=721593632 instance=ExtResource("1_tgp30")]
+script = ExtResource("2_smohn")

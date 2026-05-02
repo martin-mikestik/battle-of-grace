@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ybse84kq15yv"]
 
-[ext_resource type="PackedScene" uid="uid://c8cbf80qtamtq" path="res://scenes/skills/skill.tscn" id="1_mf0xc"]
-[ext_resource type="PackedScene" uid="uid://cuub86fxcqvlx" path="res://scenes/skills/skill_step.tscn" id="2_rqxfs"]
+[ext_resource type="PackedScene" uid="uid://c8cbf80qtamtq" path="res://scenes/skills_scenes/skill.tscn" id="1_mf0xc"]
+[ext_resource type="PackedScene" uid="uid://cuub86fxcqvlx" path="res://scenes/skills_scenes/skill_step.tscn" id="2_rqxfs"]
 
 [node name="EnergySkill" unique_id=873861011 instance=ExtResource("1_mf0xc")]
 

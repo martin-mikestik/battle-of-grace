@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://du7au56w8swjr"]
 
 [ext_resource type="Script" uid="uid://cvcf706toof6q" path="res://scripts/singletons/skill_launcher.gd" id="1_q2cxp"]
-[ext_resource type="PackedScene" uid="uid://ybse84kq15yv" path="res://scenes/skills/add_energy_skill.tscn" id="2_3sy5w"]
-[ext_resource type="PackedScene" uid="uid://blnptc5joyjjt" path="res://scenes/skills/drill_skill.tscn" id="3_3sy5w"]
+[ext_resource type="PackedScene" uid="uid://ybse84kq15yv" path="res://scenes/skills_scenes/add_energy_skill.tscn" id="2_3sy5w"]
+[ext_resource type="PackedScene" uid="uid://blnptc5joyjjt" path="res://scenes/skills_scenes/drill_skill.tscn" id="3_3sy5w"]
 
 [node name="SkillLauncher" type="Node" unique_id=64606706]
 script = ExtResource("1_q2cxp")
