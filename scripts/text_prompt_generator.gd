@@ -3,6 +3,8 @@ extends Node
 @export var num_words_range: Vector2i = Vector2i(3, 3)
 
 const PROMPT_LABEL = preload("uid://ukdg61uwdpi2")
+#const VIEWPORT_PROMPT = preload("uid://2ujoiip4ncu4")
+
 
 
 var possible_words: Array = []
@@ -15,6 +17,7 @@ func configure_possible_words():
 
 func generate_prompt() -> RichTextLabel:
 	var instance: RichTextLabel = PROMPT_LABEL.instantiate()
+	#var instance: RichTextLabel = VIEWPORT_PROMPT.instantiate()
 	instance.expected_text = generate_string()
 	instance.text = instance.expected_text
 	return instance

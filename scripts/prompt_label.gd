@@ -3,7 +3,7 @@ extends RichTextLabel
 @export var expected_text: String = "hello world"
 @export var unfinished_color: Color = Color(0.0, 0.0, 0.0, 0.616)
 @export var completed_color: Color = Color(1.0, 0.357, 0.29, 1.0)
-
+@export var should_shake: bool = false
 @export var effects: Node
 
 
@@ -56,6 +56,7 @@ func update_label_color() -> void:
 	
 	
 	var result = completed_text_1 + unfinished_text_1
-	result = RichLabelHelper.add_shake(result, 20.0, 5)
+	if should_shake:
+		result = RichLabelHelper.add_shake(result, 20.0, 5)
 	#print(result)
 	text = result
