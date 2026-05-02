@@ -24,6 +24,8 @@ var cooldown_expired: bool = false
 var my_material: Material = null
 
 func _ready():
+	current_time = Time.get_unix_time_from_system() * 1000
+	last_time_used = current_time
 	label.text = my_text
 	inactive_stylebox = get_theme_stylebox("panel")
 	original_color = inactive_stylebox.bg_color
@@ -76,13 +78,14 @@ func get_user_energy():
 	if GameManager.player:
 		return GameManager.player.current_energy
 	else:
+		print("No player attached. (get user energy)")
 		return 1000
 
 func deplete_user_energy():
 	if GameManager.player:
 		GameManager.player.deplete_energy_slots(necessary_energy)
 	else:
-		print("no player attached")
+		print("No player attached. (deplete)")
 
 #region Visual Aspects
 
