@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://cal5c0r6b4sqg"]
 
-[ext_resource type="Shader" uid="uid://otlgg8tdgajr" path="res://assets/shaders/gradient.gdshader" id="1_3mwa4"]
+[ext_resource type="Shader" uid="uid://cfgb4rus5pkxi" path="res://assets/shaders/cooldown.gdshader" id="1_3mwa4"]
 [ext_resource type="Script" uid="uid://c0ke55mhxfh6e" path="res://scenes/skills/skill_button.gd" id="1_7o3ts"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_43hlx"]
 shader = ExtResource("1_3mwa4")
-shader_parameter/degrees_uncovered = 139.65
-shader_parameter/max_distance_affected = 43.965
+shader_parameter/degrees_uncovered = 45.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ekox"]
 bg_color = Color(0.7872292, 0.51722866, 0.4987312, 0.63529414)
@@ -31,6 +30,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_8ekox")
 script = ExtResource("1_7o3ts")
 original_color = Color(0.6784314, 0.5372549, 0.8, 1)
 active_color = Color(0.94662315, 0.5528665, 0.74855477, 1)
+my_text = "L5"
 
 [node name="SkillButtonForeground" type="Panel" parent="." unique_id=1558969414]
 layout_mode = 1

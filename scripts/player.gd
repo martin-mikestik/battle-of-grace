@@ -64,6 +64,10 @@ func fill_energy_slots(num: int):
 			current_energy += 1
 			energy_bar.fill_energy_slots(1)
 
+func deplete_energy_slots(num: int):
+	for i in range(num):
+		energy_bar.deplete_energy_slots(1)
+
 func print_energy_info():
 	print("energy: " + str(current_energy) + "/" + str(maximum_energy))
 
