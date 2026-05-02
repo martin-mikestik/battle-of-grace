@@ -10,7 +10,7 @@ Label/fonts/font = ExtResource("1_qlc7c")
 RichTextLabel/font_sizes/normal_font_size = 29
 RichTextLabel/fonts/normal_font = ExtResource("1_qlc7c")
 
-[node name="PromptLabel" type="RichTextLabel" unique_id=1076373495 node_paths=PackedStringArray("effects")]
+[node name="PromptLabel" type="RichTextLabel" unique_id=1076373495]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -27,4 +27,3 @@ bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_l5qe0")
-effects = NodePath("")
