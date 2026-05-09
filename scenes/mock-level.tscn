@@ -7,26 +7,12 @@
 [ext_resource type="Shader" uid="uid://bb2kxyk8wyh2" path="res://scenes/blurry.gdshader" id="4_vt8xv"]
 [ext_resource type="PackedScene" uid="uid://1l2rc6hptu1o" path="res://scenes/skills_scenes/skills_tab.tscn" id="5_q0xwh"]
 [ext_resource type="PackedScene" uid="uid://blnptc5joyjjt" path="res://scenes/skills_scenes/individual_skills/drill_skill.tscn" id="6_6b2cx"]
-[ext_resource type="Shader" uid="uid://dg7n6lxx4qg5t" path="res://scenes/effects_scenes/effects_screen_wide/wavy_screen.gdshader" id="8_vt8xv"]
-[ext_resource type="Shader" uid="uid://bfv0av6b588t7" path="res://scenes/blur_overall.gdshader" id="9_vt8xv"]
+[ext_resource type="PackedScene" uid="uid://1sije5ysym7v" path="res://scenes/screen_shader_manager.tscn" id="8_3ue0s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ue0s"]
 shader = ExtResource("4_vt8xv")
 shader_parameter/strength = 1.858000088255
 shader_parameter/iterations = 15
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nu546"]
-shader = ExtResource("8_vt8xv")
-shader_parameter/wave_speed = 3.0
-shader_parameter/wave_frequency = 15.0
-shader_parameter/wave_amplitude = 0.01
-shader_parameter/tint_color = Color(0, 0.4, 0.8, 0.2)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v22eq"]
-shader = ExtResource("9_vt8xv")
-shader_parameter/blur_strength = 5.6400002679
-shader_parameter/quality = 4
-shader_parameter/tint_color = Color(0, 0, 0, 0.3)
 
 [node name="Level" type="Node2D" unique_id=1381351498]
 
@@ -107,26 +93,4 @@ offset_top = -85.0
 offset_right = -115.0
 offset_bottom = 427.0
 
-[node name="GlobalShaderContainer" type="Node2D" parent="." unique_id=64098064]
-
-[node name="CanvasLayer4" type="CanvasLayer" parent="GlobalShaderContainer" unique_id=1957758468]
-layer = 5
-
-[node name="ColorRect2" type="ColorRect" parent="GlobalShaderContainer/CanvasLayer4" unique_id=1229377227]
-material = SubResource("ShaderMaterial_nu546")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="WavyScreenEffectCanvas" type="CanvasLayer" parent="GlobalShaderContainer" unique_id=1332447035]
-layer = 5
-
-[node name="ColorRect" type="ColorRect" parent="GlobalShaderContainer/WavyScreenEffectCanvas" unique_id=1327890273]
-material = SubResource("ShaderMaterial_v22eq")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ScreenShaderManager" parent="." unique_id=1559406697 instance=ExtResource("8_3ue0s")]
