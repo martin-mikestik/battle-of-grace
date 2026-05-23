@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ic1vbxkc6atc" path="res://scripts/skills.gd" id="1_r687f"]
 [ext_resource type="PackedScene" uid="uid://cal5c0r6b4sqg" path="res://scenes/skills_scenes/skill_button.tscn" id="2_a5r6w"]
-[ext_resource type="Shader" uid="uid://cfgb4rus5pkxi" path="res://assets/shaders/cooldown.gdshader" id="3_a5r6w"]
+[ext_resource type="Shader" uid="uid://cfgb4rus5pkxi" path="res://assets/shaders/shaders_miscellaneous/cooldown.gdshader" id="3_a5r6w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jx3ed"]
 shader = ExtResource("3_a5r6w")

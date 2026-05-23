@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://2ujoiip4ncu4"]
 
-[ext_resource type="Shader" uid="uid://bb2kxyk8wyh2" path="res://scenes/blurry.gdshader" id="1_p75bh"]
+[ext_resource type="Shader" uid="uid://bb2kxyk8wyh2" path="res://assets/shaders/prompt_shaders/blurry.gdshader" id="1_p75bh"]
 [ext_resource type="PackedScene" uid="uid://ukdg61uwdpi2" path="res://scenes/prompt_label.tscn" id="1_ufqov"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p75bh"]

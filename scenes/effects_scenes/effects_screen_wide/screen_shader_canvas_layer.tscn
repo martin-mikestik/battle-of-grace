@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://da78bm2008qhl"]
 
-[ext_resource type="Shader" uid="uid://ckg74qwgch20b" path="res://scenes/effects_scenes/effects_screen_wide/magenta_default_shader.gdshader" id="1_7gmwu"]
+[ext_resource type="Shader" uid="uid://ckg74qwgch20b" path="res://assets/shaders/whole_screen_shaders/magenta_default_shader.gdshader" id="1_7gmwu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nu546"]
 shader = ExtResource("1_7gmwu")

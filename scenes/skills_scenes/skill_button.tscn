@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cal5c0r6b4sqg"]
 
-[ext_resource type="Shader" uid="uid://cfgb4rus5pkxi" path="res://assets/shaders/cooldown.gdshader" id="1_3mwa4"]
+[ext_resource type="Shader" uid="uid://cfgb4rus5pkxi" path="res://assets/shaders/shaders_miscellaneous/cooldown.gdshader" id="1_3mwa4"]
 [ext_resource type="Script" uid="uid://c0ke55mhxfh6e" path="res://scripts/skills_scripts/skill_button.gd" id="1_7o3ts"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_43hlx"]

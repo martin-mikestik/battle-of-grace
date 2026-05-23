@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbocp0j3t6f58"]
 
-[ext_resource type="Shader" uid="uid://otlgg8tdgajr" path="res://assets/shaders/gradient.gdshader" id="1_3x27y"]
+[ext_resource type="Shader" uid="uid://otlgg8tdgajr" path="res://assets/shaders/shaders_miscellaneous/gradient.gdshader" id="1_3x27y"]
 [ext_resource type="Texture2D" uid="uid://dge6uw77bkr6r" path="res://assets/sprites/icon.svg" id="1_im7wb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sju7m"]
