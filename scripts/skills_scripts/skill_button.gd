@@ -92,7 +92,7 @@ func set_off():
 
 func get_user_energy():
 	if GameManager.player:
-		return GameManager.player.current_energy
+		return GameManager.player.current_energy_points
 	else:
 		if verbose:
 			print("No player attached. (get user energy)")

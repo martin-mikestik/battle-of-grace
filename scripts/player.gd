@@ -19,6 +19,7 @@ var start_energy_slots: int = 3
 var current_energy_points: int = 0
 var current_energy_slots: int = 0
 
+var energy_slots_cap: int = 7
 
 @export var duration: float = 0.8
 
