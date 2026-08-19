@@ -13,6 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	return
 	if Input.is_key_pressed(KEY_A):
 		add_canvas_layer_shader_for(3)
 

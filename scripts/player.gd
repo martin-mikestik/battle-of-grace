@@ -2,15 +2,22 @@ extends CharacterBody2D
 
 @export var speed: float = 300.0
 @onready var prompt_labels: Node2D = $PromptLabels
-@export var energy_bar: Control = null
+@export var energy_bar: EnergyBar = null
 
 var has_prompt: bool = false
 
 const EXPLOSION = preload("uid://b5kv1hvj1080o")
 
 # -- energy system --
-var current_energy: int = 0
-var maximum_energy: int = 3
+
+
+
+
+var start_energy_points: int = 0
+var start_energy_slots: int = 3
+
+var current_energy_points: int = 0
+var current_energy_slots: int = 0
 
 
 @export var duration: float = 0.8
@@ -29,47 +36,56 @@ func handle_key_presses(key_press: String):
 	if key_press == "1":
 		add_energy_slots(1)
 	if key_press == "0":
-		add_energy_slots(3)
-	if key_press == "2":
-		fill_energy_slots(1)
-	if key_press == "3":
 		remove_energy_slots(1)
+	if key_press == "2":
+		add_energy_points(1)
+	if key_press == "3":
+		remove_energy_points(1)
 
 #region Energy System
+
+
+# Initialize all relevant fields, and make sure that underlying truth and GUI match.
+func configure_energy_at_game_start():
+	current_energy_points = start_energy_points
+	current_energy_slots = start_energy_slots
+	
+	configure_start_energy_bar()
 
 func configure_start_energy_bar():
 	if energy_bar:
 		if not energy_bar.is_node_ready():
 			await energy_bar.ready
-		energy_bar.add_energy_slots(3)
+		energy_bar.add_energy_slots_visual(3)
+		print("adding base energy slots.")
 	else:
 		print("Error: There is no energy bar.")
 
 func add_energy_slots(num: int):
 	for i in range(num):
-		maximum_energy += 1
-		energy_bar.add_energy_slots(1)
+		current_energy_slots += 1
+		energy_bar.add_energy_slots_visual(1)
 
 func remove_energy_slots(num: int):
 	for i in range(num):
-		if maximum_energy > 1:
-			if current_energy == maximum_energy:
-				current_energy -= 1
-			maximum_energy -= 1
-			energy_bar.remove_energy_slots(1)
+		if current_energy_slots > 1:
+			if current_energy_points == current_energy_slots:
+				current_energy_points -= 1
+			current_energy_slots -= 1
+			energy_bar.remove_energy_slots_visual(1)
 
-func fill_energy_slots(num: int):
+func add_energy_points(num: int):
 	for i in range(num):
-		if current_energy < maximum_energy:
-			current_energy += 1
-			energy_bar.fill_energy_slots(1)
+		if current_energy_points < current_energy_slots:
+			current_energy_points += 1
+			energy_bar.add_energy_points_visual(1)
 
-func deplete_energy_slots(num: int):
+func remove_energy_points(num: int):
 	for i in range(num):
-		energy_bar.deplete_energy_slots(1)
+		energy_bar.remove_energy_points_visual(1)
 
 func print_energy_info():
-	print("energy: " + str(current_energy) + "/" + str(maximum_energy))
+	print("energy: " + str(current_energy_points) + "/" + str(current_energy_slots))
 
 #endregion
 

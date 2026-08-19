@@ -85,6 +85,7 @@ scale = Vector2(0.66842157, 0.66842157)
 [node name="Drill_Skill" parent="." unique_id=873861011 instance=ExtResource("6_6b2cx")]
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1276770903]
+visible = false
 
 [node name="ViewportPrompt" parent="CanvasLayer3" unique_id=223514188 instance=ExtResource("3_3ue0s")]
 material = SubResource("ShaderMaterial_3ue0s")
