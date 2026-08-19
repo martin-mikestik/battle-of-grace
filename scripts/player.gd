@@ -9,10 +9,6 @@ var has_prompt: bool = false
 const EXPLOSION = preload("uid://b5kv1hvj1080o")
 
 # -- energy system --
-
-
-
-
 var start_energy_points: int = 0
 var start_energy_slots: int = 3
 
@@ -118,7 +114,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_prompt_finished():
 	has_prompt = false
-	#juicy_rotate(360)
+	juicy_rotate(360, 0.2)
 	
 func launch_explosion(color_modulate: Color):
 	print("launched here")

@@ -2,17 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://b7ld6s88ydubw" path="res://scenes/blue-godot.tscn" id="1_4j81o"]
 [ext_resource type="PackedScene" uid="uid://w60lbvelgtkq" path="res://scenes/player.tscn" id="2_xbqd1"]
-[ext_resource type="PackedScene" uid="uid://2ujoiip4ncu4" path="res://scenes/viewport-prompt.tscn" id="3_3ue0s"]
 [ext_resource type="PackedScene" uid="uid://b1xve4cuf0lj1" path="res://scenes/energy_bar.tscn" id="3_nud5o"]
-[ext_resource type="Shader" uid="uid://bb2kxyk8wyh2" path="res://assets/shaders/prompt_shaders/blurry.gdshader" id="4_vt8xv"]
 [ext_resource type="PackedScene" uid="uid://1l2rc6hptu1o" path="res://scenes/skills_scenes/skills_tab.tscn" id="5_q0xwh"]
 [ext_resource type="PackedScene" uid="uid://blnptc5joyjjt" path="res://scenes/skills_scenes/individual_skills/drill_skill.tscn" id="6_6b2cx"]
 [ext_resource type="PackedScene" uid="uid://1sije5ysym7v" path="res://scenes/screen_shader_manager.tscn" id="8_3ue0s"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ue0s"]
-shader = ExtResource("4_vt8xv")
-shader_parameter/strength = 1.858000088255
-shader_parameter/iterations = 15
 
 [node name="Level" type="Node2D" unique_id=1381351498]
 
@@ -83,15 +76,5 @@ scale = Vector2(0.66842157, 0.66842157)
 [node name="Skills" parent="CanvasLayer" unique_id=1374499931 instance=ExtResource("5_q0xwh")]
 
 [node name="Drill_Skill" parent="." unique_id=873861011 instance=ExtResource("6_6b2cx")]
-
-[node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1276770903]
-visible = false
-
-[node name="ViewportPrompt" parent="CanvasLayer3" unique_id=223514188 instance=ExtResource("3_3ue0s")]
-material = SubResource("ShaderMaterial_3ue0s")
-offset_left = -627.0
-offset_top = -85.0
-offset_right = -115.0
-offset_bottom = 427.0
 
 [node name="ScreenShaderManager" parent="." unique_id=1559406697 instance=ExtResource("8_3ue0s")]
