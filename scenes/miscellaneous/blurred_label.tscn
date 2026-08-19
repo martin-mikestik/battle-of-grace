@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dqquclv88khx1"]
+
+[ext_resource type="PackedScene" uid="uid://2ujoiip4ncu4" path="res://scenes/viewport-prompt.tscn" id="1_mxya4"]
+[ext_resource type="Shader" uid="uid://bb2kxyk8wyh2" path="res://assets/shaders/prompt_shaders/blurry.gdshader" id="2_n4l2o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ue0s"]
+shader = ExtResource("2_n4l2o")
+shader_parameter/strength = 1.858000088255
+shader_parameter/iterations = 15
+
+[node name="CanvasLayer3" type="CanvasLayer" unique_id=1207852433]
+
+[node name="ViewportPrompt" parent="." unique_id=223514188 instance=ExtResource("1_mxya4")]
+material = SubResource("ShaderMaterial_3ue0s")
+offset_left = -627.0
+offset_top = -85.0
+offset_right = -115.0
+offset_bottom = 427.0
