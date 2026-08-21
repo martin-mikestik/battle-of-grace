@@ -9,6 +9,25 @@ var list_energy_slots: Array[ProgressBar] = []
 var current_energy_points_visual: int = 0
 var current_energy_slots_visual: int = 0
 
+
+class VisualData extends RefCounted:
+	var current_energy_points: int
+	var current_energy_slots: int
+	var energy_slots_cap: int
+	
+	func _init(_current_energy_points: int = 0, _current_energy_slots: int = 0, _energy_slots_cap: int = 0):
+		current_energy_points = _current_energy_points
+		current_energy_slots = _current_energy_slots
+		energy_slots_cap = _energy_slots_cap
+	
+	func print():
+		print("-----------")
+		print("	current_energy_points: " + str(current_energy_points))
+		print("	current_energy_slots: " + str(current_energy_slots))
+		print("	energy_slots_cap: " + str(energy_slots_cap))
+		print("-----------")
+
+
 func _ready():
 	connect_all_signals()
 	print(h_box_container)
@@ -19,15 +38,18 @@ func connect_all_signals():
 
 
 # This should be the only method accessible from outside.
-func set_energy_state_visual(new_energy_slots_visual: int, new_energy_points_visual: int, old_energy_slots_visual: int, old_energy_points_visual):
-	var difference_slots = new_energy_slots_visual - old_energy_slots_visual
+func update_energy_visual(visual_data: VisualData):
+
+	visual_data.print()
+	
+	var difference_slots = visual_data.current_energy_slots - current_energy_slots_visual
 	
 	if difference_slots >= 0:
 		add_energy_slots_visual(difference_slots)
 	else:
-		remove_energy_slots_visual(-difference_slots)
+		remove_energy_slots_visual(-difference_slots) # negative because you're removing a positive number of things
 		
-	var difference_points = new_energy_points_visual - old_energy_points_visual
+	var difference_points = visual_data.current_energy_points - current_energy_points_visual
 	if difference_points >= 0:
 		add_energy_points_visual(difference_points)
 	else:
@@ -82,4 +104,4 @@ func recalculate_filled_slots_visual():
 
 # Interface:
 # Outsiders can call only this function:
-# set_energy_state_visual
+# update_energy_visual

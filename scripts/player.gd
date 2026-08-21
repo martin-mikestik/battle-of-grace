@@ -23,7 +23,7 @@ var energy_slots_cap: int = 7
 func _ready():
 	GameManager.player = self
 	connect_all_signals()
-	configure_start_energy_bar()
+	configure_energy_at_game_start()
 
 
 func connect_all_signals():
@@ -32,12 +32,12 @@ func connect_all_signals():
 func handle_key_presses(key_press: String):
 	if key_press == "1":
 		add_energy_slots(1)
-	if key_press == "0":
-		remove_energy_slots(1)
 	if key_press == "2":
-		add_energy_points(1)
-	if key_press == "3":
-		remove_energy_points(1)
+		remove_energy_slots(1)
+	if key_press == "9":
+		try_add_energy_points(1)
+	if key_press == "0":
+		try_remove_energy_points(1)
 
 #region Energy System
 
@@ -53,33 +53,65 @@ func configure_start_energy_bar():
 	if energy_bar:
 		if not energy_bar.is_node_ready():
 			await energy_bar.ready
-		energy_bar.add_energy_slots_visual(3)
+		print("update visual")
+		energy_bar.update_energy_visual(EnergyBar.VisualData.new(current_energy_points, current_energy_slots, energy_slots_cap) )
+		
 		print("adding base energy slots.")
 	else:
 		print("Error: There is no energy bar.")
 
+
 func add_energy_slots(num: int):
-	for i in range(num):
-		current_energy_slots += 1
-		energy_bar.add_energy_slots_visual(1)
+	var slots_to_add: int = num
+	if num > energy_slots_cap - current_energy_slots:
+		slots_to_add = energy_slots_cap - current_energy_slots
+
+	current_energy_slots += slots_to_add
+	energy_bar.update_energy_visual(EnergyBar.VisualData.new(current_energy_points, current_energy_slots, energy_slots_cap) )
+
 
 func remove_energy_slots(num: int):
-	for i in range(num):
-		if current_energy_slots > 1:
-			if current_energy_points == current_energy_slots:
-				current_energy_points -= 1
-			current_energy_slots -= 1
-			energy_bar.remove_energy_slots_visual(1)
+	var slots_to_remove: int = num
+	if num > current_energy_slots:
+		slots_to_remove = current_energy_slots
+	var energy_points_to_remove: int = 0
+	if slots_to_remove > current_energy_slots - current_energy_points:
+		energy_points_to_remove = slots_to_remove - (current_energy_slots - current_energy_points) # verify
+
+	current_energy_points -= energy_points_to_remove
+	current_energy_slots -= slots_to_remove
+
+	energy_bar.update_energy_visual(EnergyBar.VisualData.new(current_energy_points, current_energy_slots, energy_slots_cap) )
+
+
+func try_add_energy_points(num: int) -> bool:
+	if true: # later, check for fields that will block this, like enemy spells
+		var points_to_add: int = num
+		if num > current_energy_slots - current_energy_points:
+			points_to_add = current_energy_slots - current_energy_points
+		add_energy_points(points_to_add)
+		return true
+
+	return false
 
 func add_energy_points(num: int):
-	for i in range(num):
-		if current_energy_points < current_energy_slots:
-			current_energy_points += 1
-			energy_bar.add_energy_points_visual(1)
+	current_energy_points += num
+	energy_bar.update_energy_visual(EnergyBar.VisualData.new(current_energy_points, current_energy_slots, energy_slots_cap) )
+
+func try_remove_energy_points(num: int) -> bool:
+	if true: # later, check for fields that will block this, like enemy spells
+		var points_to_remove: int = num
+		if num > current_energy_points:
+			points_to_remove = current_energy_points
+		remove_energy_points(points_to_remove)
+		return true
+
+	return false
 
 func remove_energy_points(num: int):
-	for i in range(num):
-		energy_bar.remove_energy_points_visual(1)
+	current_energy_points -= num
+	energy_bar.update_energy_visual(EnergyBar.VisualData.new(current_energy_points, current_energy_slots, energy_slots_cap) )
+
 
 func print_energy_info():
 	print("energy: " + str(current_energy_points) + "/" + str(current_energy_slots))
@@ -117,7 +149,6 @@ func _on_prompt_finished():
 	juicy_rotate(360, 0.2)
 	
 func launch_explosion(color_modulate: Color):
-	print("launched here")
 	var instance = EXPLOSION.instantiate()
 	instance.modulate = color_modulate
 	add_child(instance)
