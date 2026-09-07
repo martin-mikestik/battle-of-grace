@@ -27,3 +27,4 @@ bbcode_enabled = true
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_l5qe0")
+unfinished_color = Color(1, 1, 1, 0.6156863)

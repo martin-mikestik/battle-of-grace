@@ -2,9 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b7ld6s88ydubw" path="res://scenes/blue-godot.tscn" id="1_4j81o"]
 [ext_resource type="PackedScene" uid="uid://w60lbvelgtkq" path="res://scenes/player.tscn" id="2_xbqd1"]
-[ext_resource type="PackedScene" uid="uid://2ujoiip4ncu4" path="res://scenes/viewport-prompt.tscn" id="3_3ue0s"]
 [ext_resource type="PackedScene" uid="uid://qxgyeksmwmq3" path="res://scenes/hud.tscn" id="3_ot55k"]
-[ext_resource type="Shader" uid="uid://bb2kxyk8wyh2" path="res://assets/shaders/prompt_shaders/blurry.gdshader" id="4_vt8xv"]
 [ext_resource type="PackedScene" uid="uid://blnptc5joyjjt" path="res://scenes/skills_scenes/individual_skills/drill_skill.tscn" id="6_6b2cx"]
 [ext_resource type="PackedScene" uid="uid://1sije5ysym7v" path="res://scenes/screen_shader_manager.tscn" id="8_3ue0s"]
 
@@ -30,9 +28,8 @@ handle_input_locally = false
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Player" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport" unique_id=145763616 node_paths=PackedStringArray("energy_bar") instance=ExtResource("2_xbqd1")]
+[node name="Player" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport" unique_id=145763616 instance=ExtResource("2_xbqd1")]
 position = Vector2(377, 347.92657)
-energy_bar = NodePath("")
 
 [node name="Background" type="Node2D" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1023409328]
 

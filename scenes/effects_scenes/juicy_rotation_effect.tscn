@@ -6,3 +6,4 @@
 [node name="RotationEffect" unique_id=721593632 instance=ExtResource("1_hoj7p")]
 script = ExtResource("2_wx74c")
 rotation_degrees = 360.0
+duration = 0.6

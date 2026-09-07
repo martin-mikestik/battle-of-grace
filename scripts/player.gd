@@ -146,7 +146,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_prompt_finished():
 	has_prompt = false
-	juicy_rotate(360, 0.2)
+	juicy_rotate(360, 0.5)
 	
 func launch_explosion(color_modulate: Color):
 	var instance = EXPLOSION.instantiate()
