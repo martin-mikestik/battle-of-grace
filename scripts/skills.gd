@@ -23,10 +23,10 @@ func connect_all_signals():
 	InputHandler.key_press.connect(handle_key_presses)
 
 func handle_key_presses(key_press: String):
-	pass
-	#if l_active:
-		#if key_press.is_valid_int():
-			#var key_i: int = int(key_press)
+	if l_active:
+		if key_press.is_valid_int():
+			var key_i: int = int(key_press)
+			print("KEY: " + str(key_i))
 			#if key_i in num_to_key.keys():
 				#num_to_key.get(int(key_press)).set_off()
 

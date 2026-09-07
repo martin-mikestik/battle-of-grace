@@ -88,7 +88,7 @@ func set_off():
 	last_time_used = Time.get_unix_time_from_system() * 1000
 	deplete_user_energy()
 	
-	#print("Button " + name + " was set off.")
+	print("Button " + name + " was set off.")
 
 func get_user_energy():
 	if GameManager.player:
@@ -102,7 +102,7 @@ func get_user_energy():
 # TODO: later, let the actual skill delete the user's energy, not the button
 func deplete_user_energy():
 	if GameManager.player:
-		GameManager.player.deplete_energy_slots(necessary_energy)
+		GameManager.player.try_remove_energy_points(necessary_energy)
 	else:
 		if verbose:
 			print("No player attached. (deplete)")

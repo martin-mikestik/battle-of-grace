@@ -29,10 +29,10 @@ offset_bottom = 50.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8ekox")
 script = ExtResource("1_7o3ts")
 is_unlocked = true
+cooldown_time = 1.0
+my_text = "L5"
 original_color = Color(0.6784314, 0.5372549, 0.8, 1)
 active_color = Color(0.7882353, 0.5176471, 0.49803922, 1)
-my_text = "L5"
-cooldown_time = 1.0
 
 [node name="SkillButtonForeground" type="Panel" parent="." unique_id=1558969414]
 layout_mode = 1

@@ -37,7 +37,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="Skills" type="Control" unique_id=1374499931 node_paths=PackedStringArray("skill_button_background", "skill_button_background_2")]
+[node name="SkillsButtons" type="Control" unique_id=1374499931 node_paths=PackedStringArray("skill_button_background", "skill_button_background_2")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

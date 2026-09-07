@@ -21,11 +21,12 @@ class VisualData extends RefCounted:
 		energy_slots_cap = _energy_slots_cap
 	
 	func print():
-		print("-----------")
-		print("	current_energy_points: " + str(current_energy_points))
-		print("	current_energy_slots: " + str(current_energy_slots))
-		print("	energy_slots_cap: " + str(energy_slots_cap))
-		print("-----------")
+		#print("-----------")
+		#print("	current_energy_points: " + str(current_energy_points))
+		#print("	current_energy_slots: " + str(current_energy_slots))
+		#print("	energy_slots_cap: " + str(energy_slots_cap))
+		#print("-----------")
+		pass
 
 
 func _ready():
