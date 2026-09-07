@@ -18,3 +18,5 @@ shape = SubResource("RectangleShape2D_g2els")
 
 [node name="PromptLabels" type="Node2D" parent="." unique_id=279392096]
 position = Vector2(0, -58)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=877428321]

@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://b7ld6s88ydubw" path="res://scenes/blue-godot.tscn" id="1_4j81o"]
 [ext_resource type="PackedScene" uid="uid://w60lbvelgtkq" path="res://scenes/player.tscn" id="2_xbqd1"]
-[ext_resource type="PackedScene" uid="uid://b1xve4cuf0lj1" path="res://scenes/energy_bar.tscn" id="3_nud5o"]
-[ext_resource type="PackedScene" uid="uid://1l2rc6hptu1o" path="res://scenes/skills_scenes/skills_tab.tscn" id="5_q0xwh"]
+[ext_resource type="PackedScene" uid="uid://2ujoiip4ncu4" path="res://scenes/viewport-prompt.tscn" id="3_3ue0s"]
+[ext_resource type="PackedScene" uid="uid://qxgyeksmwmq3" path="res://scenes/hud.tscn" id="3_ot55k"]
+[ext_resource type="Shader" uid="uid://bb2kxyk8wyh2" path="res://assets/shaders/prompt_shaders/blurry.gdshader" id="4_vt8xv"]
 [ext_resource type="PackedScene" uid="uid://blnptc5joyjjt" path="res://scenes/skills_scenes/individual_skills/drill_skill.tscn" id="6_6b2cx"]
 [ext_resource type="PackedScene" uid="uid://1sije5ysym7v" path="res://scenes/screen_shader_manager.tscn" id="8_3ue0s"]
 
@@ -31,9 +32,7 @@ render_target_update_mode = 4
 
 [node name="Player" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport" unique_id=145763616 node_paths=PackedStringArray("energy_bar") instance=ExtResource("2_xbqd1")]
 position = Vector2(377, 347.92657)
-energy_bar = NodePath("../../../../../CanvasLayer/EnergyBar")
-
-[node name="Camera2D" type="Camera2D" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport/Player" unique_id=1793065964]
+energy_bar = NodePath("")
 
 [node name="Background" type="Node2D" parent="CanvasLayer2/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1023409328]
 
@@ -69,11 +68,7 @@ scale = Vector2(1.1225532, 1.1225532)
 position = Vector2(1017, 330)
 scale = Vector2(0.66842157, 0.66842157)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1403063025]
-
-[node name="EnergyBar" parent="CanvasLayer" unique_id=1758024141 instance=ExtResource("3_nud5o")]
-
-[node name="Skills" parent="CanvasLayer" unique_id=1374499931 instance=ExtResource("5_q0xwh")]
+[node name="CanvasLayer" parent="." unique_id=316066158 instance=ExtResource("3_ot55k")]
 
 [node name="Drill_Skill" parent="." unique_id=873861011 instance=ExtResource("6_6b2cx")]
 

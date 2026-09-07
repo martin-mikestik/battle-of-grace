@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://qxgyeksmwmq3"]
+
+[ext_resource type="PackedScene" uid="uid://b1xve4cuf0lj1" path="res://scenes/energy_bar.tscn" id="1_oo0fn"]
+[ext_resource type="PackedScene" uid="uid://1l2rc6hptu1o" path="res://scenes/skills_scenes/skills_tab.tscn" id="2_5ysmq"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=316066158]
+
+[node name="EnergyBar" parent="." unique_id=1758024141 instance=ExtResource("1_oo0fn")]
+metadata/_edit_use_anchors_ = true
+
+[node name="Skills" parent="." unique_id=1374499931 instance=ExtResource("2_5ysmq")]
+metadata/_edit_use_anchors_ = true
