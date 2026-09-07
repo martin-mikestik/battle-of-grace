@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Battle of Grace"
-run/main_scene="uid://26yiiarp5j50"
+run/main_scene="uid://kjxo0n13mfk4"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/sprites/icon.svg"
 

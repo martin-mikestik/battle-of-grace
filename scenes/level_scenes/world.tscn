@@ -16,10 +16,11 @@ seamless = true
 
 [node name="world" type="Node2D" unique_id=76763608]
 
-[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=819102994]
-layer = -100
+[node name="ParallaxLayer" type="Parallax2D" parent="." unique_id=1147616615]
+repeat_size = Vector2(512, 512)
+repeat_times = 5
 
-[node name="BackgroundTexture" type="TextureRect" parent="BackgroundLayer" unique_id=515859010]
+[node name="BackgroundTexture" type="TextureRect" parent="ParallaxLayer" unique_id=515859010]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,7 +29,10 @@ grow_vertical = 2
 texture = SubResource("NoiseTexture2D_ta7l5")
 stretch_mode = 1
 
-[node name="Player" parent="." unique_id=145763616 instance=ExtResource("1_6bqxh")]
+[node name="Player" parent="." unique_id=145763616 node_paths=PackedStringArray("energy_bar") instance=ExtResource("1_6bqxh")]
 position = Vector2(295, 345)
+energy_bar = NodePath("../CanvasLayer/EnergyBar")
 
 [node name="CanvasLayer" parent="." unique_id=316066158 instance=ExtResource("2_ta7l5")]
+
+[editable path="CanvasLayer"]

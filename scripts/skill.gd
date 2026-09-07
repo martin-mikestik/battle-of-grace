@@ -15,5 +15,6 @@ func _run_sequence() -> void:
 			await get_tree().create_timer(step.delay_after).timeout
 
 func _process(_delta):
-	if Input.is_action_just_pressed("LaunchPromptGeneration"):
-		activate()
+	pass
+	#if Input.is_action_just_pressed("LaunchPromptGeneration"):
+		#activate()
