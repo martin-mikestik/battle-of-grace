@@ -141,7 +141,8 @@ func _physics_process(_delta: float) -> void:
 		velocity = direction * speed
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, speed)
-
+	if GameManager.keyboard_mode == GameManager.KeyboardMode.PROMPT:
+		return
 	move_and_slide()
 
 func _on_prompt_finished():

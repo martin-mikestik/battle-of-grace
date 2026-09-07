@@ -36,6 +36,8 @@ func get_needed_letter() -> String:
 	return expected_text[next_necessary_letter_index]
 
 func get_pressed_key(key_name: String):
+	if GameManager.keyboard_mode == GameManager.KeyboardMode.MOVE:
+		return
 	if key_name == get_needed_letter():
 		next_necessary_letter_index += 1
 		#print(next_necessary_letter_index)
