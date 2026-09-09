@@ -12,3 +12,7 @@ func toggle_keyboard_mode():
 	else:
 		keyboard_mode = KeyboardMode.MOVE
 		
+
+func _process(_delta):
+	if Input.is_action_just_pressed("ToggleKeyboardMode"):
+		toggle_keyboard_mode()

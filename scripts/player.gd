@@ -127,9 +127,8 @@ func handle_input():
 		has_prompt = true
 		var prompt_instance: RichTextLabel = TextPromptGenerator.generate_prompt()
 		prompt_labels.add_child(prompt_instance)
+		print("connecting new prompt to signal")
 		prompt_instance.prompt_finished.connect(_on_prompt_finished)
-
-
 
 
 func _physics_process(_delta: float) -> void:
@@ -146,6 +145,10 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_prompt_finished():
+	print("this got called
+	
+	
+	")
 	has_prompt = false
 	juicy_rotate(360, 0.5)
 	
@@ -156,6 +159,7 @@ func launch_explosion(color_modulate: Color):
 	instance.explode()
 
 func juicy_rotate(target_rotation_deg: float, duration_rotation: float):
+	print("rotation happenes")
 	var tween = create_tween()
 	var target_rad = deg_to_rad(target_rotation_deg)
 	

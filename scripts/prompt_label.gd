@@ -25,6 +25,7 @@ func check_text():
 		_on_prompt_completed()
 
 func _on_prompt_completed():
+	print("prompt completed emitted.")
 	prompt_finished.emit()
 	
 	SkillLauncher.launch_energy_skill()
