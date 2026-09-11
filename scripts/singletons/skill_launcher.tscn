@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://cvcf706toof6q" path="res://scripts/singletons/skill_launcher.gd" id="1_q2cxp"]
 [ext_resource type="PackedScene" uid="uid://ybse84kq15yv" path="res://scenes/skills_scenes/individual_skills/add_energy_skill.tscn" id="2_3sy5w"]
 [ext_resource type="PackedScene" uid="uid://blnptc5joyjjt" path="res://scenes/skills_scenes/individual_skills/drill_skill.tscn" id="3_3sy5w"]
+[ext_resource type="PackedScene" uid="uid://c85bjqjc8eaco" path="res://scenes/skills_scenes/individual_skills/add_energy_point_skill.tscn" id="4_qc8pt"]
 
 [node name="SkillLauncher" type="Node" unique_id=64606706]
 script = ExtResource("1_q2cxp")
 
-[node name="EnergySkill" parent="." unique_id=873861011 instance=ExtResource("2_3sy5w")]
+[node name="AddEnergySkill" parent="." unique_id=873861011 instance=ExtResource("2_3sy5w")]
 
-[node name="Drill_Skill" parent="." unique_id=2014070073 instance=ExtResource("3_3sy5w")]
+[node name="DrillSkill" parent="." unique_id=2014070073 instance=ExtResource("3_3sy5w")]
+
+[node name="AddEnergyPointSkill" parent="." unique_id=1366843547 instance=ExtResource("4_qc8pt")]

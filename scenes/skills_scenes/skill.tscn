@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cbdq67eenriyx" path="res://scenes/effects_scenes/explosion_effect.tscn" id="3_p0sll"]
 [ext_resource type="PackedScene" uid="uid://dm83vurc8w77x" path="res://scenes/effects_scenes/fill_energy_effect.tscn" id="4_3c8no"]
 [ext_resource type="PackedScene" uid="uid://cpnepyu07vcx3" path="res://scenes/effects_scenes/juicy_rotation_effect.tscn" id="5_tv3ks"]
+[ext_resource type="PackedScene" uid="uid://dr1ct4xin04r" path="res://scenes/effects_scenes/add_energy_point_effect.tscn" id="6_uat8l"]
 
 [node name="Skill" type="Node" unique_id=873861011]
 script = ExtResource("1_nhdbg")
@@ -20,4 +21,5 @@ modulate_color = Color(0.49803922, 1, 0.83137256, 1)
 [node name="FillEnergyEffect" parent="Effects" unique_id=1481015833 instance=ExtResource("4_3c8no")]
 
 [node name="RotationEffect" parent="Effects" unique_id=824881355 instance=ExtResource("5_tv3ks")]
-duration = 0.6
+
+[node name="AddEnergyPointEffect" parent="Effects" unique_id=668735729 instance=ExtResource("6_uat8l")]

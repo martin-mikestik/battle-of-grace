@@ -1,7 +1,10 @@
 extends Node
 
-@onready var energy_skill: Skill = $EnergySkill
-@onready var drill_skill: Skill = $Drill_Skill
+# TODO: make it path-independent so that you don't have to change this on name changes
+@onready var energy_skill: Skill = $AddEnergySkill
+@onready var drill_skill: Skill = $DrillSkill
+@onready var add_energy_point_skill: Skill = $AddEnergyPointSkill
+
 
 enum SKILL_TYPE {
 	EnergySlot,
@@ -16,3 +19,6 @@ func launch_energy_skill():
 
 func launch_drill_skill():
 	drill_skill.activate()
+	
+func launch_add_energy_point_skill():
+	add_energy_point_skill.activate()

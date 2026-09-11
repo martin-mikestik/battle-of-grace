@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Battle of Grace"
-run/main_scene="uid://kjxo0n13mfk4"
+run/main_scene="uid://bxxbwvjcr8owe"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/sprites/icon.svg"
 
@@ -23,6 +23,10 @@ RichLabelHelper="*uid://bfrbh876uwa06"
 GameManager="*uid://j10tmwnjw7e0"
 WordDataset="*uid://c8uef8je7e3w6"
 SkillLauncher="*uid://du7au56w8swjr"
+
+[display]
+
+window/stretch/aspect="keep_height"
 
 [file_customization]
 

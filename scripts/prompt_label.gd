@@ -29,6 +29,7 @@ func _on_prompt_completed():
 	prompt_finished.emit()
 	
 	SkillLauncher.launch_energy_skill()
+	SkillLauncher.launch_add_energy_point_skill()
 	queue_free()
 
 

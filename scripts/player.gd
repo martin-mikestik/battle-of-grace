@@ -145,11 +145,9 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_prompt_finished():
-	print("this got called
-	
-	
-	")
+	print("this got called")
 	has_prompt = false
+	# 
 	juicy_rotate(360, 0.5)
 	
 func launch_explosion(color_modulate: Color):
