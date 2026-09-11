@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dr1ct4xin04r"]
+
+[ext_resource type="PackedScene" uid="uid://rf382y4xnk0b" path="res://scenes/effects_scenes/base_effect.tscn" id="1_5l66b"]
+[ext_resource type="Script" uid="uid://cs8i52yaudryw" path="res://scripts/effects_scripts/add_energy_point_effect.gd" id="2_00ese"]
+
+[node name="AddEnergyPointEffect" unique_id=721593632 instance=ExtResource("1_5l66b")]
+script = ExtResource("2_00ese")

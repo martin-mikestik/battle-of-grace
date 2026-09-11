@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c85bjqjc8eaco"]
+
+[ext_resource type="PackedScene" uid="uid://c8cbf80qtamtq" path="res://scenes/skills_scenes/skill.tscn" id="1_5eg8a"]
+[ext_resource type="PackedScene" uid="uid://cuub86fxcqvlx" path="res://scenes/skills_scenes/skill_step.tscn" id="2_iecwb"]
+
+[node name="AddEnergyPointSkill" unique_id=873861011 instance=ExtResource("1_5eg8a")]
+
+[node name="SkillStep" parent="." index="0" unique_id=1592034503 node_paths=PackedStringArray("action") instance=ExtResource("2_iecwb")]
+action = NodePath("../Effects/AddEnergyPointEffect")
