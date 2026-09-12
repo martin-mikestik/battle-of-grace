@@ -1,12 +1,13 @@
 extends Control
 
 var can_generate_new_panel: bool = true
-var can_send_panel_away: bool = false
+
+@export var transition_time_panel: float = 0.5
 
 @export var offset_right_left_min: float = 10
-@export var offset_right_left_max: float = 500
+@export var offset_right_left_max: float = 400
 @export var offset_top_bottom_min: float = 10
-@export var offset_top_bottom_max: float = 500
+@export var offset_top_bottom_max: float = 300
 
 const RANDOM_PANEL = preload("uid://cgqr8nsj4djpq")
 
@@ -23,10 +24,10 @@ func process_input():
 	if Input.is_action_just_pressed("LaunchPromptGeneration"):
 		if can_generate_new_panel:
 			generate_new_panel()
-		else:
-			send_panel_away()
+
 
 func generate_new_panel():
+	can_generate_new_panel = false
 	var panel_instance: Panel = RANDOM_PANEL.instantiate()
 	#var my_anchor_offset_top = randf_range(offset_top_bottom_min, offset_top_bottom_max)
 	#var my_anchor_offset_bottom = -my_anchor_offset_top
@@ -34,15 +35,20 @@ func generate_new_panel():
 	#var my_anchor_offset_left = -my_anchor_offset_right
 	
 	panel_instance.offset_top = randf_range(offset_top_bottom_min, offset_top_bottom_max)
+
 	panel_instance.offset_bottom = -panel_instance.offset_top
 	panel_instance.offset_left = randf_range(offset_right_left_min, offset_right_left_max)
 	panel_instance.offset_right = -panel_instance.offset_left
 
+	panel_instance.panel_achieved_position.connect(_on_panel_achieved_position)
+	panel_instance.panel_floated_away.connect(_on_panel_floated_away)
+	panel_instance.visible = false
+	panel_instance.transition_time = transition_time_panel
 	add_child(panel_instance)
- 
-	
-	
-	
-	
-func send_panel_away():
+
+func _on_panel_achieved_position():
 	pass
+
+func _on_panel_floated_away():
+	can_generate_new_panel = true
+	
