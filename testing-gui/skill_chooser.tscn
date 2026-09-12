@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://bvndme4v6k8iu"]
+
+[ext_resource type="FontFile" uid="uid://cyj3ih5hntu6q" path="res://assets/fonts/JetBrainsMono-VariableFont_wght.ttf" id="1_31nx1"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yfu4a"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3l0ag"]
+width = 124
+height = 124
+noise = SubResource("FastNoiseLite_yfu4a")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hb83i"]
+frequency = 0.0508
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ed032"]
+width = 124
+height = 124
+noise = SubResource("FastNoiseLite_hb83i")
+
+[sub_resource type="Gradient" id="Gradient_curs6"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_enwh2"]
+frequency = 0.019
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_srv11"]
+width = 124
+height = 124
+noise = SubResource("FastNoiseLite_enwh2")
+color_ramp = SubResource("Gradient_curs6")
+
+[sub_resource type="Gradient" id="Gradient_ktmig"]
+colors = PackedColorArray(0, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k4gd1"]
+frequency = 0.0091
+offset = Vector3(0, 465.52, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_04mls"]
+width = 124
+height = 124
+noise = SubResource("FastNoiseLite_k4gd1")
+color_ramp = SubResource("Gradient_ktmig")
+
+[node name="SkillChooser" type="PanelContainer" unique_id=516261004]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1879865810]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1452141228]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1195739174]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_31nx1")
+theme_override_font_sizes/font_size = 80
+text = "CHOOSE SKILL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1196039812]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 60
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=261922605]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer" unique_id=1277363872]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=2079957013]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_31nx1")
+theme_override_font_sizes/font_size = 40
+text = "Skill 1 Name"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1794808918]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = SubResource("NoiseTexture2D_3l0ag")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer" unique_id=1849040254]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_31nx1")
+theme_override_font_sizes/font_size = 40
+text = "L2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1651396981]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2" unique_id=1849264565]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer" unique_id=139926027]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_31nx1")
+theme_override_font_sizes/font_size = 40
+text = "Skill 1 Name"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer" unique_id=862756946]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = SubResource("NoiseTexture2D_ed032")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer" unique_id=232301243]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_31nx1")
+theme_override_font_sizes/font_size = 40
+text = "L2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1604771964]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3" unique_id=290030085]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=232088756]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_31nx1")
+theme_override_font_sizes/font_size = 40
+text = "Skill 1 Name"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=158983188]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = SubResource("NoiseTexture2D_srv11")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer3/VBoxContainer" unique_id=1408279247]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_31nx1")
+theme_override_font_sizes/font_size = 40
+text = "L2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer4" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1744150318]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer4" unique_id=243731142]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer4/VBoxContainer" unique_id=1020254591]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_31nx1")
+theme_override_font_sizes/font_size = 40
+text = "Skill 1 Name"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer4/VBoxContainer" unique_id=927641475]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture = SubResource("NoiseTexture2D_04mls")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/PanelContainer4/VBoxContainer" unique_id=955433702]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_31nx1")
+theme_override_font_sizes/font_size = 40
+text = "L2"
+horizontal_alignment = 1
+vertical_alignment = 1
